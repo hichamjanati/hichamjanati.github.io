@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Janatih.GitHub.io by janatiH</title>
+
+    <link rel="stylesheet" href="./stylesheets/styles.css">
+    <link rel="stylesheet" href="./stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Genomics</h1>
+        <p class="view"><font color='green'><b> In construction ... </b> </font></p>
+        <p class="view"><font color='green'> Update: 03/20/2016  </font></p>
+
+        <p class = "view"> <ul> <li> <i> Ladybird: </i> Single-Cell RT-PCR data framework. </li> </ul> </p>
+
+      </header>
+      <section>
+
+      <h4> Ladybird </h4
+            <p class="view"><i> Ladybird </i> is a data analysis framework created using the amazing pyqt. </p> 
+            
+ 
+
+        
+      </section>
+      <footer>
+        <p><font size="2">Homepage of Hicham Janati - <a href="mailto:hicham.janati@ensae.fr"> hicham.janati@ensae.fr </a> -  <img src=".images/github.png" alt="Mountain View" style="width:10px;height:10px;"> <a href="https://github.com/janatiH">MyGithub</a></font></p>
+
+      </footer>
+    </div>
+    <script src="./javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
