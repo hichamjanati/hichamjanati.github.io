@@ -248,6 +248,7 @@ footer {
   width:900px;
   float:bottom;
   position:relative;
+  padding-top:150px;
   overflow: scroll;
   -webkit-font-smoothing:subpixel-antialiased;
 }
