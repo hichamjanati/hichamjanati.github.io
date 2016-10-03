@@ -56,7 +56,6 @@
 
 body {
   background-color: #fff;
-  overflow: scroll;
   padding:50px;
   font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#727272;
@@ -161,8 +160,7 @@ img {
 header {
   width:270px;
   float:left;
-  position:relative;
-  overflow: scroll;
+  position:fixed;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
@@ -229,7 +227,6 @@ section {
   width:500px;
   float:right;
   padding-bottom:50px;
-  overflow:scroll;
 }
 
 small {
@@ -244,11 +241,10 @@ hr {
 }
 
 footer {
-   padding-left:200px;
-  width:900px;
-  float:bottom;
-  position:relative;
-  overflow: scroll;
+  width:270px;
+  float:left;
+  position:fixed;
+  bottom:50px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
@@ -259,7 +255,7 @@ footer {
     margin:0;
   }
 
-  header, section, footer{
+  header, section, footer {
     float:none;
     position:static;
     width:auto;
