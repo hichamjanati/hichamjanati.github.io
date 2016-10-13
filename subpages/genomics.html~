@@ -15,7 +15,7 @@
   <body>
     <div class="wrapper">
       <header>
-      <p><i><font color='gray'> <a href="../index.html"> Homepage </font> </i> </p>
+      <h3><i><font color='gray'> <a href="../index.html"> Homepage </a> </font> </i> </h3>
         <h2>Genomics</h2>
         <p class="view"><font color='green'><b> In construction ... </b> </font></p>
         <p class="view"><font color='green'> Update: 03/20/2016  </font></p>
