@@ -18,7 +18,7 @@
         <h1>Homepage of Hicham Janati</h1>
         <p class="view"> <img src="images/me.jpg" alt="Mountain View" style="width:300px;height:320px;"> </p>
            <h3> About me </h3>
-        <p class = "view">  I'm a 3<sup>rd</sup> student at ENSAE Paristech, interested in machine learning, applied mathematics and computer science. Briefly, if <i> Python </i> is there, I'm in !</p>
+        <p class = "view">  I'm a 3<sup>rd</sup> year student at ENSAE Paristech, interested in machine learning, applied mathematics and computer science. Briefly, if <i> Python </i> is there, I'm in !</p>
       <p class="view"> <img src="images/github.png" alt="Mountain View" style="width:17px;height:17px;"> <a href="https://github.com/janatiH">MyGithub</a></p>
 
       </header>
