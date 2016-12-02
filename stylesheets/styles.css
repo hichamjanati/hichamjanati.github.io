@@ -162,7 +162,7 @@ header {
   width:270px;
   float:left;
   position:relative;
-  overflow: scroll;
+  /*overflow: scroll;*/
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
@@ -229,7 +229,7 @@ section {
   width:500px;
   float:right;
   padding-bottom:50px;
-  overflow:scroll;
+  /*overflow:scroll;*/
 }
 
 small {
