@@ -160,7 +160,7 @@ margin: auto;
 @media all and (max-width: 600px) {
 .entete_li a {
    padding: auto;
-	font-size: 110%;
+  font-size: 100%;
 
 }
 }
