@@ -13,6 +13,7 @@ body {
 background-size:cover;
 
 }
+
 #nav {
 margin: auto;
 }
@@ -23,6 +24,8 @@ width:100%;
 text-align: center;
 padding-bottom: 50px;
 }
+
+
 
 #wrapper{
 width: 70%;
@@ -43,8 +46,8 @@ box-shadow:-3px 4px 3px 1px white,3px 4px 3px 1px white, 3px -4px 3px 1px white;
 @media all and (max-width: 600px) {
 #wrapper{
 width: 80%;
-padding: 0;
-position: left;
+padding: 2%;
+position: center;
 margin: auto;
 }
 }
@@ -104,6 +107,14 @@ padding: 10px 30px ;
 margin: auto;
 }
 
+@media all and (max-width: 600px) {
+#gitlink li {
+float: left;
+padding: 0px 10px ;
+margin: auto;
+}
+}
+
 .entete {
     list-style-type: none;
     margin: auto;
@@ -123,6 +134,17 @@ margin: auto;
   height:40px;
 }
 
+@media all and (max-width: 600px) {
+.entete {
+  width:100%;
+}
+}
+
+@media all and (max-width: 600px) {
+.entete_li {
+  width:24%;
+}
+}
 
 .entete_li a {
     display: block;
@@ -135,6 +157,13 @@ margin: auto;
 
 }
 
+@media all and (max-width: 600px) {
+.entete_li a {
+   padding: auto;
+	font-size: 110%;
+
+}
+}
 
 .entete_li a:hover {
     background-color: #000000;
