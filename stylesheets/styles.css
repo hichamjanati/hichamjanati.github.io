@@ -124,11 +124,11 @@ margin: auto;
   padding:0;
   border-radius:5px;
   border:1px solid #e0e0e0;
-  width:364px;
+  width: 100%;
 }
 
 .entete_li {
-  width:90px;
+  width:24%;
   float:left;
   border-right:1px solid #e0e0e0;
   height:40px;
@@ -136,7 +136,7 @@ margin: auto;
 
 @media all and (max-width: 600px) {
 .entete {
-  width:100%;
+  width:auto;
 }
 }
 
@@ -160,8 +160,7 @@ margin: auto;
 @media all and (max-width: 600px) {
 .entete_li a {
    padding: auto;
-  font-size: 100%;
-
+  font-size: 85%;
 }
 }
 
