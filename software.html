@@ -3,57 +3,86 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Homepage of Hicham Janati</title>
+    <title>Hicham Janati's homepage</title>
    </head>
     <link rel="stylesheet" href="stylesheets/github-light.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
 <meta name="viewport" content="width=device-width">
     
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
   </head>
   <body>
     <div id="wrapper" >
       <header>
+      <img class='choch' src="images/choche.jpg" style="width:100px";>
         <h1 class='section' align='center'>Homepage of Hicham Janati</h1>
+        <p class="intro">  Université Paris-Saclay - INRIA </p>
+                <br>
     <nav id='nav'>
        <ul class='entete'>
-            <li class = 'entete_li'><a href="index.html">Home</a></li>
+            <span class="selected"><li class = 'entete_li'><a href="index.html">Home</a></li></span>
             <li class = 'entete_li'><a href="projects.html">Projects</a></li>
-			<li class = 'entete_li'><a href="software.html">Software</a></li>
+			<li class = 'selected'><a href="software.html">Software</a></li>
 			<li class = 'entete_li'><a href="teaching.html">Teaching</a></li>
 			<li class = 'entete_li'><a href="publications.html">Publications</a></li>
 
        </ul>
    </nav>
     </header>
-      <div id='content'>
-         <h2> Software: </h2>
-<p> Some of my projects can be useful to others: </p>
-	<ul>
 
-      <li> <h3 class = "field"> Python packages </h4>
-        <p class="view"><span class ="projecttitle"> pyLDPC - </span> "pyLDPC" can be used to construct
+
+
+<div class='content'>
+ <br>
+<h2> Software </h2>
+ <p class="here">Some of my projects can be useful to others:</p>
+ <div class='academic'>
+
+<div class='project1'>
+
+
+	
+	<ul class='list'>
+	
+	<li class='field'> <h3>I - Python packages: </h3> 
+<hr class='hr'>
+         
+        
+        <p class="view"> <span class ="projecttitle"> <a href="https://github.com/janatiH/pyldpc/"><u>pyLDPC :</u></a></span>
+        <div class='text'>"pyLDPC" can be used to construct
       LDPC codes and simulate coding and decoding of text, sound and image files when transmitted through a
 		 GWN (gaussian white noise) channel. Simple simulations with binary data can also be performed in order
 		to compare the performance of a list of codes. 
-
-         The package and several tutorials are available at <a href="https://pypi.python.org/pypi/pyldpc"> PyPI</a>.</p>
- 		</li>
-
-        <li><h3 class = "field"> GUI Frameworks </h4>
-          <p class="view"><span class ="projecttitle"> LadyBird - </span> LadyBird is a PyQt program for gene expression data analysis 
+		<br>
+         The package and several tutorials are available at <a href="https://pypi.python.org/pypi/pyldpc"> PyPI</a>.</div></p>
+		
+        <br>
+       
+        
+       </li>  
+       </div>
+            
+	<br>
+	<div class='project'>
+	<li class='field'> <h3>II - GUI Frameworks : </h3> 
+	<hr class='hr'>
+	    
+	   
+	    <p class="view"><span class ="projecttitle">LadyBird: </span> <div class='text'>
+	    LadyBird is a PyQt program for gene expression data analysis 
 		(single cell data). The framework is intended for statistical confrontation of two or more groups of cells ana modeling
 		 the evolution of genes distributions. Download links and youtube tutorials are available <a href="projects/genomics.html"> here.</a></p>
-			 </li>
+			 </p></div>
+	    
+	    </li>
+	 </div>
+	 
+	 <br>
+	 
 
-	</ul>
-
-	</div>
-
+	
       <div id='footer'>
         <p><font size="2">
         

@@ -3,70 +3,44 @@ body {
 	margin:auto;
 	padding:0;
 	height:100%;
-    font-family : 'Futura';
-    
+    font-family : 'Baskerville';
 }
 body {
-  
+  width:100%;
   overflow-y: scroll;
   font-weight:400;
-position: relative;
-  background-color:rgb(50,50,50);
-  
-
-.textme{
-color: black;
-}
+  background-image: url(../images/gray.jpg); 
+background-size:cover;
 
 }
 
-#wrapper
-{
-width: 75%;
+#nav {
+margin: auto;
+}
+
+header {
+font-family: "Times New Roman";
+width:100%;
+text-align: center;
+padding-bottom: 50px;
+}
+
+
+
+#wrapper{
+width: 70%;
 margin:auto;
 margin-top : -5px;
 min-height:100%;
-text-align: center;
-background-color:rgb(50,50,50); 
-
-}
-
-
-header
-{
-text-align: center;
-padding-bottom: 0px;
-width:100%;
-margin:0px;
+position:relative;
 background-color: white;
-
-padding-top:20px;
-margin-top:30px;
+padding: 50px;
+padding-top: 30px;
+box-shadow:-3px 4px 3px 1px white,3px 4px 3px 1px white, 3px -4px 3px 1px white;
 }
 
-
-
-#nav 
-{
-margin-top:-15px;
-height:35px;
-}
-
-
-#content 
-{
-padding-bottom:30%; /* Height of the footer element */
-}
-
-.aboutme{
-width:100%;
-margin: auto;
-text-align: left;
-text-indent: 15px;
-color : black;
-text-align:left;
-font-weight:light;
-font-family:titilliumweb;
+#content {
+	padding-bottom:100px; /* Height of the footer element */
 }
 
 @media all and (max-width: 600px) {
@@ -81,10 +55,11 @@ margin: auto;
 #footer {
 	width:100%;
 	height:5%;
+	position:absolute;
 	text-align: center;
-	bottom:0px;
+	bottom:10px;
 	left:0;
-	color:rgb(220,220,220);
+    
 }
 
 .photome {
@@ -115,7 +90,7 @@ float: center;
 
 #gitlink 
 {
-text-align: center;
+float: left;
 }
 
 #gitlink ul{
@@ -127,6 +102,7 @@ text-align: center;
 }
 
 #gitlink li {
+float: left;
 padding: 10px 30px ;
 margin: auto;
 }
@@ -141,133 +117,82 @@ margin: auto;
 
 .entete {
     list-style-type: none;
-     padding: 0px;
-    background-color: rgb(0,210,203);
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+  padding:0;
+  border-radius:5px;
+  border:1px solid #e0e0e0;
   width: 100%;
-  box-shadow: 0px 1px 0px 0px rgb(200,200,200);
- height:35px;
-
 }
 
-.entete_li, .selected{
-  width:19.5%;
-  display:inline-block;
-  font-family:futura;
- height:35px;
- list-style-type: none;
-
+.entete_li {
+  width:19.85%;
+  float:left;
+  border-right:1px solid #e0e0e0;
+  height:40px;
 }
 
 
 
 @media all and (max-width: 600px) {
 .entete {
-  width:100%;
-   list-style-type: none;
+  width:auto;
 }
 }
 
 @media all and (max-width: 600px) {
 .entete_li {
-  width:25%;
-   list-style-type: none;
+  width:24%;
 }
 }
 
 .entete_li a {
-     padding:8px;
-   text-align: center;
-   font-size:22px;
+    display: block;
+    color: white;
+    text-align: center;
+    margin:auto;
+   padding: 10px;
     text-decoration: none;
-    color:white;
- font-family:SignPainter;
- letter-spacing:2px;
-  list-style-type: none;
-	}
+	font-size: 120%;
+
+}
 
 @media all and (max-width: 600px) {
 .entete_li a {
-
+   padding: auto;
   font-size: 85%;
 }
 }
 
 .entete_li a:hover {
-    background-color:rgb(100,210,203);
-    color:white;
-    text-shadow:1px 1px 4px rgb(20,20,20);
-    height:18px;
-    overflow:visible;
-}
-
-.selected a {
-    padding:8px;
-   text-align: center;
-   font-size:22px;
-    text-decoration: none;
-    color:white;
- font-family:SignPainter;
- letter-spacing:2px;
-  list-style-type: none;
-    color:white;
-    text-shadow:1px 1px 4px rgb(20,20,20);
-    height:18px;
-    background-color:rgb(150,210,203);
-
-    overflow:visible;
-}
-
-
-.academictitle
-{
-background-color:rgb(50,50,50);
-height:30px;
-margin-top:20px;
- border-left: 2px solid rgb(200,200,200);
-border-right: 2px solid rgb(200,200,200);
-padding-top:15px;
-
-
+    background-color: #000000;
 }
 
 
 .date {
-font-family: titilliumweb;
-color: rgb(160,160,160);
-font-size:13px;
+font-family: 'Courier';
+color: darkblue;
+padding:0;
+padding-bottom:5px;
+margin:0;
+}
 
-
+.field{
+font-family: 'Baskerville';
 }
 
 
-.field
-{
-font-family: futura;
-text-align:left;
-margin-left:100px;
- list-style-type: none;
+.view span{
 
-}
-
-.list {
-    list-style-type:none;
-
-  }
-
-
-.view
-{
-    text-indent: 15px;
-
-text-align:left;
-font-weight:light;
-font-family:titilliumweb;
+color: darkblue;
+font-weight: bold;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
   margin:0 0 20px;
-  font-family: futura;
 }
 
 p, ul, ol, table, pre, dl {
@@ -275,68 +200,23 @@ p, ul, ol, table, pre, dl {
 }
 
 h1, h2, h3 {
-  line-height:1,1;
+  line-height:1.1;
 }
 
 h1 {
-  font-size:20px;
-  font-family:coalition;
-  letter-spacing:2px;
-  color:rgb(80,80,95);
-  line-height:2;
+  font-size:28px;
 }
 
 h2 {
-  color:rgb(230,230,230);
-  font-size:35px;
-  text-align:center;
- 
-  font-family:SignPainter;
-  letter-spacing:4px;
-
- 
+  color:#393939;
 }
 
-.content
-{
-background-color: rgb(50,50,50);
-width: 100%;
-box-shadow: 2px 2px 4px rgb(50,50,50);
-
-}
-
-#para {
-font-family:futura;
-font-size:15px;
-color:rgb(60,60,60);
-
-
-}
-
-.hr
-{
-width:30%;
-}
-
-.hr2
-{
-width=30%;
-margin-left:300px;
-}
-
- h4, h5, h6 {
+h3, h4, h5, h6 {
   color:#494949;
-  
-}
-
-h3
-{
-color:rgb(50,200,189);
-font-size:21px;
 }
 
 a {
-  color:rgb(50,189,170);
+  color:#39c;
   text-decoration:none;
 }
 
@@ -351,62 +231,11 @@ a small {
   display:block;
 }
 
-.projecttitle
-{
-padding:2px;
-color:rgb(200,160,20);
-margin-bottom:2px;
-font-size:18px;
-}
-
-.projecttitle a
-{
-
-padding:2px;
-color:rgb(200,160,20);
-margin-bottom:2px;
-font-size:18px;
-}
-
-.check a
-{
-color:rgb(70,70,70);
-font-size:13px;
-}
-
-.text
-{
-text-indent: 15px;
-font-size:14px;
-width:70%;
-font-family: titilliumweb;
-color:rgb(60,60,60);
-indent-
-
-}
-
-
-.award{
-color: red;
-color:rgb(240,160,20)
-}
-.projecttitle a:hover
-{
-background-color: white;
-color:rgb(240,160,20);
-
-
-}
-
 a:hover small {
   color:#777;
 }
 
-.sentiment
-{
-font-size:16px;
-color:rgb(200,160,20);
-}
+
 
 
 
@@ -458,79 +287,13 @@ small {
 }
 
 hr {
-  border:2px;
+  border:0;
   background:#e5e5e5;
   height:1px;
   margin:0 0 20px;
-  color:rgb(50,200,189);
 }
 
- .project1
- {
- padding-top:40px;
- margin-bottom:2px;
- box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.4), 0 6px 20px 0 rgba(200,200, 200, 0.19);
- padding-bottom:20px;
- background-color: white;
- }
 
- .project
- {
- margin-bottom:2px;
- box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.4), 0 6px 20px 0 rgba(200,200, 200, 0.19);
- padding-bottom:5px;
- background-color: white;
- padding-left:40px;
- padding-top:40px;
- padding-bottom:20px;
- }
-  .projectn
- {
- margin-bottom:2px;
-  box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.4), 0 6px 20px 0 rgba(200,200, 200, 0.19);
- padding-bottom:5px;
- background-color: white;
- padding-left:40px;
- padding-top:40px;
- padding-bottom:20px;
- }
- 
- .blackproject
- {
- box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4), 0px 6px 20px 0 rgba(0,0,0, 0.19);
- margin-bottom:40px;
-
- 
- }
- 
- .project_title
- {
- color:rgb(255,255,255);
- }
- 
- .view2
- {
-width:100%;
-text-align:left;
-color: rgb(160,160,160);
-font-family:titilliumweb;
-
- }
-
-.intro
-{
-font-family:titilliumweb;
-font-size:14px;
-color:grey;
-}
-
-.here
-{
-font-family:titilliumweb;
-font-size:16px;
-color:rgb(170,170,170);
-text-align:center;
-}
 
 @font-face {
   font-family: 'Noto Sans';
@@ -587,3 +350,4 @@ text-align:center;
        url('../fonts/Noto-Sans-700italic/Noto-Sans-700italic.ttf') format('truetype'),
        url('../fonts/Noto-Sans-700italic/Noto-Sans-700italic.svg#NotoSans') format('svg');
 }
+
