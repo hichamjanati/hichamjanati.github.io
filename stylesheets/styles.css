@@ -128,11 +128,13 @@ margin: auto;
 }
 
 .entete_li {
-  width:24%;
+  width:19.85%;
   float:left;
   border-right:1px solid #e0e0e0;
   height:40px;
 }
+
+
 
 @media all and (max-width: 600px) {
 .entete {
@@ -184,7 +186,7 @@ font-family: 'Baskerville';
 
 .view span{
 
-color: red;
+color: darkblue;
 font-weight: bold;
 }
 
