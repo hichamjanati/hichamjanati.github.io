@@ -158,7 +158,12 @@ margin: auto;
 
 }
 
-
+.files_li {
+font-size: 95%;
+}
+.files_li a {
+color: red;
+}
 
 @media all and (max-width: 600px) {
 .entete {
