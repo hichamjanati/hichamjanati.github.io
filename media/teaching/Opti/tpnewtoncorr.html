@@ -12006,23 +12006,23 @@ Exécutez <code>scipy.optimize.check_grad?</code> pour obtenir la documentation 
 <p>1) existence:
     Par continuité de h, l'ensemble des contraintes est un fermé. g est continue et clairement coercive, le minimum donc existe.</p>
 <p>2) convexité: 
-    Comme $\gamma &gt; 0$, on a pour tout $x,h  \in \mathbb{R}^n$: $$ h^{\top} \nabla^2 g(x)h = h^{\top}(A^{\top}A + 2\gamma I_n) = \|Ah\|^2 + 2 \gamma \|h\|^2 &gt; 0$$ Donc g est strictivement convexe.
+    Comme $\gamma &gt; 0$, on a pour tout $x,h  \in \mathbb{R}^n$: $$ h^{\top} \nabla^2 g(x)h = h^{\top}(A^{\top}A + 2\gamma I_n) = \|Ah\|^2 + 2 \gamma \|h\|^2 &gt; 0$$ La hessienne de g est définie positive, donc g est strictivement convexe.
     La solution est donc unique.</p>
 <p>3) KKT:
-    Les contraintes sont linéaires, elle est donc qualifié sur K, donc toute solution du problème vérifie KKT.
-    Par convexité (+ qualification), KKT est aussi suffisante, donc toute solution de KKT est un minimum. 
+    Les contraintes sont linéaires, elles sont donc qualifiées sur K, donc toute solution du problème vérifie KKT.
+    Par convexité (+ qualification), KKT est aussi une condition suffisante, donc toute solution de KKT est un minimum. 
     Par unicité, La solution de KKT est la solution du problème. Notons la $(x, \mu) \in \mathbb{R}^n \times \mathbb{R}^p$ :</p>
-<p>$$ \left\{ \begin{array}{l}
+<p>$ \left\{ \begin{array}{l}
                \nabla g(x) + \sum_{i=1}^p \mu_i\nabla h_i(x) = 0 \\
                h(x) = 0
             \end{array}
-            \right.  $$
-   i.e 
-      $$ \left\{ \begin{array}{l}
+            \right.  $</p>
+<p>i.e 
+      $ \left\{ \begin{array}{l}
                 A^{\top}(Ax - b) + 2\gamma x + C^{\top}\mu = 0 \\
                 Cx - d = 0
             \end{array}
-            \right.  $$
+            \right.  $
 &lt;/font&gt;</p>
 <h5 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">&#182;</a></h5><p>Expliquer comment peut-on utiliser la méthode de Newton pour résoudre le système KKT.</p>
 <p><br> <font color="green"> 
@@ -12030,10 +12030,10 @@ Le problème est équivalent à son système KKT, on peut donc résoudre KKT ave
     $$ F(x, \mu) = \left(\nabla g(x) + \mu \nabla h(x), h(x)\right) $$ 
 La suite de Newton s'écrit donc: $$(x_{k+1}, \mu_{k+1}) = (x_{k}, \mu_{k}) - J_F^{-1}(x_{k}, \mu_{k}) F(x_{k}, \mu_{k}) $$</p>
 <p>On a donc besoin d'écrire la Jacobienne de F. 
-On a:
-$$ F(x, \mu) = \left(A^{\top}(Ax - b) + 2\gamma x + C^{\top}\mu, Cx - d\right) $$
-On écrit la matricienne Jacobienne de F par blocs:</p>
-<p>$$ J_F(x, \mu) = \begin{pmatrix} A^{\top}A + 2\gamma I_n &amp; C^{\top} \\ C &amp; 0 \end{pmatrix} $$
+On a:</p>
+<p>$ F(x, \mu) = \left(A^{\top}(Ax - b) + 2\gamma x + C^{\top}\mu, Cx - d\right) $</p>
+<p>On écrit la matricienne Jacobienne de F par blocs:</p>
+<p>$ J_F(x, \mu) = \begin{pmatrix} A^{\top}A + 2\gamma I_n &amp; C^{\top} \\ C &amp; 0 \end{pmatrix} $
  &lt;/font&gt;</p>
 <h5 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">&#182;</a></h5><p>Implémentez la fonction F dont on veut trouver un zéro et sa matrice Jacobienne.</p>
 <h5 id="Question-9">Question 9<a class="anchor-link" href="#Question-9">&#182;</a></h5><p>Implémentez la version de newton adaptée.</p>
