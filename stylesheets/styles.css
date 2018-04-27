@@ -4,15 +4,15 @@ body {
 	padding:0;
 	height:100%;
     font-family : 'Futura';
-    
+
 }
 body {
-  
+
   overflow-y: scroll;
   font-weight:400;
 position: relative;
   background-color:rgb(50,50,50);
-  
+
 
 .textme{
 color: black;
@@ -27,7 +27,7 @@ margin:auto;
 margin-top : -5px;
 min-height:100%;
 text-align: center;
-background-color:rgb(50,50,50); 
+background-color:rgb(50,50,50);
 
 }
 
@@ -46,14 +46,14 @@ margin-top:30px;
 
 
 
-#nav 
+#nav
 {
 margin-top:-15px;
 height:35px;
 }
 
 
-#content 
+#content
 {
 padding-bottom:30%; /* Height of the footer element */
 }
@@ -113,7 +113,7 @@ float: center;
 
 
 
-#gitlink 
+#gitlink
 {
 text-align: center;
 }
@@ -160,6 +160,7 @@ margin: auto;
 
 .files_li {
 font-size: 95%;
+white-space: nowrap;
 }
 .files_li a {
 color: red;
@@ -295,11 +296,11 @@ h2 {
   color:rgb(230,230,230);
   font-size:35px;
   text-align:center;
- 
+
   font-family:SignPainter;
   letter-spacing:4px;
 
- 
+
 }
 
 .content
@@ -331,7 +332,7 @@ margin-left:300px;
 
  h4, h5, h6 {
   color:#494949;
-  
+
 }
 
 h3
@@ -499,20 +500,20 @@ hr {
  padding-top:40px;
  padding-bottom:20px;
  }
- 
+
  .blackproject
  {
  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4), 0px 6px 20px 0 rgba(0,0,0, 0.19);
  margin-bottom:40px;
 
- 
+
  }
- 
+
  .project_title
  {
  color:rgb(255,255,255);
  }
- 
+
  .view2
  {
 width:100%;
