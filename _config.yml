@@ -4,7 +4,7 @@ description: [A glimpse of my work]
 keywords: "Hicham, Janati, Inria, Ensae, Optimal transport, neuroscience, machine learning"
 
 home: ./index.html
-publications: ./publications.html
+research: ./research.html
 teaching: ./teaching.html
 
 my_github: https://github.com/hichamjanati
