@@ -1,4 +1,6 @@
-## Publications
+# Research
+
+### Publications
 
 - H. Janati, M. Cuturi and A. Gramfort. Spatio-Temporal Alignments: Optimal transport through space and time. (Submitted, 2019)
 [paper](https://arxiv.org/pdf/1910.03860.pdf) | [Python code](https://github.com/hichamjanati/spatio-temporal-alignements)
