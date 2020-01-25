@@ -2,7 +2,7 @@
 
 
 #### Optimisation différentiable (2017-2020) - ENSAE 1A
-- Notes et Exercices (2020) - [pdf](media/Teaching/Opti/notes.pdf)
+- Notes et Exercices (2020) - [pdf](media/teaching/Opti/notes.pdf)
 - TP Newton - [html](media/teaching/Opti/tpnewton.html) - [Jupyter](media/teaching/Opti/tpnewton.ipynb)
 - TP Newton Solution - [html](media/teaching/Opti/tpnewton_.html) - [Jupyter](media/teaching/Opti/tpnewton_.ipynb)
 
