@@ -1,8 +1,8 @@
 theme: jekyll-theme-cayman
-title: [Homepage of Hicham Janati]
-description: [A glimpse of my work]
+title: Homepage of Hicham Janati
+description: A glimpse of my work
 keywords: "Hicham, Janati, Inria, Ensae, Optimal transport, neuroscience, machine learning"
-
+google_analytics: UA-157013469-1
 home: ./index.html
 research: ./research.html
 teaching: ./teaching.html
