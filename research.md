@@ -3,7 +3,7 @@
 ### Publications
 
 
-## Conference paper)
+## Conference papers
 - H. Janati, B. Muzellec, G. Peyré and M. Cuturi. *Entropic Optimal Transport between (Unbalanced) Gaussian Measures has a Closed Form* (Submitted, 2020).
 [(paper)](https://arxiv.org/abs/2006.02572) | [(Python code)](https://github.com/hichamjanati/Entropic-OT-gaussians)
 
