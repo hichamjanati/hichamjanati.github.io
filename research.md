@@ -30,7 +30,7 @@ Journal of Machine Learning Research (2020)
 [(paper)](http://jmlr.org/(paper)s/v21/19-763.html) | [(Python code)](https://github.com/johannfaouzi/pyts)
 
 - H. Janati, T. Bazeille, B. Thirion, M. Cuturi and A. Gramfort.
-*Multi-subject MEG/EEG source imaging with sparse multi-task regression* (Submitted, 2019)
+*Multi-subject MEG/EEG source imaging with sparse multi-task regression* (NeuroImage, 2019)
 [(paper)](https://arxiv.org/pdf/1910.01914.pdf)
 
 
