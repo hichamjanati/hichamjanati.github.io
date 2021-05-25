@@ -8,7 +8,7 @@ domain adaptation and machine learning. I obtained my phd at Inria in the [Parie
 
 
 ### News
-- In April 2021, I started working as a post-doc at CMAP, Institut polytechnique de Paris. 
+- Since April 2021, I'm a post-doc at CMAP, Institut polytechnique de Paris. 
 - I defended my phd on the 23rd of March 2021. [Manuscript](media/manuscript-hicham-janati.pdf) | [Defense recording](https://youtu.be/OEVijf0ng5g).
 - I presented [OT closed form for Gaussians](https://arxiv.org/abs/2006.02572) at the Neurips 2020 Orals 2020.
 - I presented [Debiased Sinkhorn barycenters](https://arxiv.org/abs/2006.02575) at ICML 2020.
