@@ -3,13 +3,13 @@
 
 #### Optimisation différentiable (2017-2020) - ENSAE 1A
 - Notes et Exercices (2020) - [pdf](media/teaching/Opti/notes.pdf)
-<!-- - TP Newton - [html](media/teaching/Opti/tpnewton.html) - [Jupyter](media/teaching/Opti/tpnewton.ipynb)
-- TP Newton Solution - [html](media/teaching/Opti/tpnewton_.html) - [Jupyter](media/teaching/Opti/tpnewton_.ipynb) -->
+- TP Newton - [html](media/teaching/Opti/tpnewton.html) - [Jupyter](media/teaching/Opti/tpnewton.ipynb)
+<!-- - TP Newton Solution - [html](media/teaching/Opti/tpnewton_.html) - [Jupyter](media/teaching/Opti/tpnewton_.ipynb) -->
 
 #### Probability theory (2018) - ENSAE 1A
 
-<!-- #### Monte-Carlo methods (2017-2020) - ENSAE 2A
-- [TP 1 - RANDU](media/teaching/SMC/td1.html)
+#### Monte-Carlo methods (2017-2020) - ENSAE 2A
+<!-- - [TP 1 - RANDU](media/teaching/SMC/td1.html)
 - [TP 2 - Accept-Reject](media/teaching/SMC/td2.html)
 - [TP 3 - Box-muller](media/teaching/SMC/td3.html)
 - [TP 4 - Geometric](media/teaching/SMC/td4.html)
