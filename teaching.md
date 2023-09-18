@@ -26,6 +26,10 @@ Approximation theory and simulation algorithms
 - *Advanced machine learning (2022, 2023)*
  Lectures on optimal transport, semi-supervised and self-supervised learning.
 
+### Telecom Executive Education
+- *Introduction to Machine learning (2022, 2023)*
+Dense 2-day program for executives with little to no previous background in AI.
+
 ## ENSAE / Sorbonne Université [Teaching assistant during PhD]
 
 - Optimisation différentiable (2017-2020) - ENSAE 1A
