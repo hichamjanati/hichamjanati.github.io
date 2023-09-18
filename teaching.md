@@ -1,27 +1,34 @@
-## Teaching
+# Teaching
 
 
-#### Optimisation différentiable (2017-2020) - ENSAE 1A
-- Notes et Exercices (2020) - [pdf](media/teaching/Opti/notes.pdf)
-- TP Newton - [html](media/teaching/Opti/tpnewton.html) - [Jupyter](media/teaching/Opti/tpnewton.ipynb)
-<!-- - TP Newton Solution - [html](media/teaching/Opti/tpnewton_.html) - [Jupyter](media/teaching/Opti/tpnewton_.ipynb) -->
+## École Polytechnique
 
-#### Probability theory (2018) - ENSAE 1A
+### Master Data science for business (X/HEC)
+- *Python for data science (2021)*
+Hands on programming lectures where students learn by doing. Teaching style from the tried
+and tested [software carpentry](https://software-carpentry.org/) project.
 
-#### Monte-Carlo methods (2017-2020) - ENSAE 2A
-<!-- - [TP 1 - RANDU](media/teaching/SMC/td1.html)
-- [TP 2 - Accept-Reject](media/teaching/SMC/td2.html)
-- [TP 3 - Box-muller](media/teaching/SMC/td3.html)
-- [TP 4 - Geometric](media/teaching/SMC/td4.html)
-- [TP 5 - Control / Antithetic variates](media/teaching/SMC/td5.html)
-- [TP 6 - Importance Sampling](media/teaching/SMC/td6.html)
-- [TP 7 - MCMC](media/teaching/SMC/td7.html) -->
+### Master data science (X/Telecom Paris/ENSAE)
+- *Statistical learning theory (2022, 2023)*
+Mathematical foundations for supervised learning
+- *Optimization for machine learning (2023)*
+General overview of optimization in data science: convex, non-convex, smooth and non smooth machine learning models. Theoretical study and practical Python implementation of optimization solvers.
 
-#### Introduction à la programmation en C - Université Paris 1 (2017)
-- Exam 1 - [Enoncé](media/C/exam1.pdf) - [Corrigé](media/C/exam1c.pdf)
-- Exam 2 - [Enoncé](media/C/exam2.pdf) - [Corrigé](media/C/exam2c.pdf)
-- Exam 3 - [Enoncé](media/C/exam3.pdf)
-- DM 1 - [Enoncé](media/C/dm1.pdf) - [Corrigé](media/C/dm1c.pdf)
-- DM 2 - [Enoncé](media/C/dm2.pdf) - [Corrigé](media/C/dm2c.pdf)
-- Tutoriel - Pointeurs - [Cours / Questions](media/C/pointers.pdf) - [Corrigé](media/C/pointersc.pdf)
-- Tutoriel - Structures - [Cours / Questions](media/C/structures.pdf) - [Corrigé](media/C/structuresc.pdf)
+## Telecom Paris
+
+### Cycle ingénieur (4ème année)
+- *Advanced Statistics (2022, 2023)*
+Theoretical course on non-parametric models
+- *Numerical calculus and Monte-Carlo methods (2022, 2023)*
+Approximation theory and simulation algorithms
+
+### Master spécialisé Big Data AI
+- *Advanced machine learning (2022, 2023)*
+ Lectures on optimal transport, semi-supervised and self-supervised learning.
+
+## ENSAE / Sorbonne Université [Teaching assistant during PhD]
+
+- Optimisation différentiable (2017-2020) - ENSAE 1A
+- Probability theory (2018) - ENSAE 1A
+- Monte-Carlo methods (2017-2020) - ENSAE 2A
+- Programmation en C - La Sorbonne Université (2017)
