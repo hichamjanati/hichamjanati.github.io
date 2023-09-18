@@ -3,7 +3,7 @@
 
 ## École Polytechnique
 
-### Master Data science for business (X/HEC)
+### Master Data Science For Business (X/HEC)
 - *Python for data science (2021)*
 
 Hands on programming lectures where students learn by doing. Teaching style from the tried
