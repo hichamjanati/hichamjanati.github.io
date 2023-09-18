@@ -5,29 +5,37 @@
 
 ### Master Data science for business (X/HEC)
 - *Python for data science (2021)*
+
 Hands on programming lectures where students learn by doing. Teaching style from the tried
 and tested [software carpentry](https://software-carpentry.org/) project.
 
-### Master data science (X/Telecom Paris/ENSAE)
+### Master data science (X/Télécom Paris/ENSAE)
 - *Statistical learning theory (2022, 2023)*
+
 Mathematical foundations for supervised learning
+
 - *Optimization for machine learning (2023)*
+
 General overview of optimization in data science: convex, non-convex, smooth and non smooth machine learning models. Theoretical study and practical Python implementation of optimization solvers.
 
-## Telecom Paris
+## Télécom Paris
 
 ### Cycle ingénieur (4ème année)
 - *Advanced Statistics (2022, 2023)*
+
 Theoretical course on non-parametric models
 - *Numerical calculus and Monte-Carlo methods (2022, 2023)*
+
 Approximation theory and simulation algorithms
 
 ### Master spécialisé Big Data AI
 - *Advanced machine learning (2022, 2023)*
+
  Lectures on optimal transport, semi-supervised and self-supervised learning.
 
-### Telecom Executive Education
+### Télécom Executive Education
 - *Introduction to Machine learning (2022, 2023)*
+
 Dense 2-day program for executives with little to no previous background in AI.
 
 ## ENSAE / Sorbonne Université [Teaching assistant during PhD]
