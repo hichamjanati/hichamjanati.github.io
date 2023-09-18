@@ -1,6 +1,6 @@
 
 
-![self](img/self.png)
+![self](img/me.png)
 
 
 Hi there, I'm Hicham Janati. I'm an associate professor at Télécom Paris in the [Signal, Statistique et apprentissage (S2A) team](https://www.telecom-paris.fr/fr/recherche/laboratoires/laboratoire-traitement-et-communication-de-linformation-ltci/les-equipes-de-recherche/signal-statistique-et-apprentissage-s2a/personnes). I obtained my PhD at Inria in the [Parietal](https://team.inria.fr/parietal/) team, working under supervision of [Alexandre Gramfort](http://alexandre.gramfort.net) and [Marco Cuturi](http://marcocuturi.net). My thesis manuscript can be found [here](media/manuscript-hicham-janati.pdf). The defense recording can be found [here](https://youtu.be/OEVijf0ng5g). My research interests are Optimal transport and its interactions with machine learning.
