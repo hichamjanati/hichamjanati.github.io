@@ -1,5 +1,9 @@
 # Teaching
 
+## INSEA
+- *Statistiques Bayésiennes (2025)*
+- [TP3 - hierarchical models](data/SB/hierarchical_model.ipynb)
+
 
 ## École Polytechnique
 
