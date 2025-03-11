@@ -2,7 +2,15 @@
 
 ## INSEA
 - *Statistiques Bayésiennes (2025)*
-- [TP3 - hierarchical models](data/SB/hierarchical_model.ipynb)
+- [Chapitre 1 pdf](media/teaching/SB/SB-ch1.pdf)
+- [Chapitre 2 pdf](media/teaching/SB/SB-ch2.pdf)
+- [Chapitre 1 html](media/teaching/SB/SB-ch1/index.html)
+- [Chapitre 2 html](media/teaching/SB/SB-ch2/index.html)
+- [TD1 - Bayesian models | pdf](media/teaching/SB/td1_modele_bayesien.pdf)
+- [TP2 - MCMC diagnostics (Gibbs)| pdf](media/teaching/SB/td2_mcmc_diagnostics.pdf)
+- [TP3 - Intro PyMC | notebook](media/teaching/SB/td3_intro_pymc.ipynb)
+- [TP4 - hierarchical models | notebook](media/teaching/SB/hierarchical_model.ipynb)
+- [TP5 - Capture-Recapture | notebook](media/teaching/SB/td5_capture.pdf)
 
 
 ## École Polytechnique
@@ -38,7 +46,7 @@ Approximation theory and simulation algorithms
  Lectures on optimal transport, semi-supervised and self-supervised learning.
 
 ### Télécom Executive Education
-- *Introduction to Machine learning (2022, 2023)*
+- *Introduction to Machine learning (2022, 2023, 2024)*
 
 Dense 2-day program for executives with little to no previous background in AI.
 
