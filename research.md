@@ -1,7 +1,7 @@
 # Research
 
 ### Publications
-
+This is list is rarely maintained, for an up-to-date list check [my scholar profile](https://scholar.google.com/citations?hl=fr&user=1quGqW0AAAAJ).
 
 ## Conference papers
 - H. Janati, B. Muzellec, G. Peyré and M. Cuturi. *Entropic Optimal Transport between (Unbalanced) Gaussian Measures has a Closed Form* (Neurips, 2020).

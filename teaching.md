@@ -32,11 +32,11 @@ General overview of optimization in data science: convex, non-convex, smooth and
 
 ## Télécom Paris
 
-### Cycle ingénieur (4ème année)
-- *Advanced Statistics (2022, 2023)*
+### Cycle ingénieur (2ème année)
+- *Advanced Statistics (2022, 2023, 2024)*
 
 Theoretical course on non-parametric models
-- *Numerical calculus and Monte-Carlo methods (2022, 2023)*
+- *Numerical calculus and Monte-Carlo methods (2022, 2023, 2024)*
 
 Approximation theory and simulation algorithms
 
