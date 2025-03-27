@@ -1,7 +1,7 @@
 # Teaching
 
 ## INSEA
-#### [Statistiques Bayésiennes](teaching_sb) (2025)
+#### [Statistiques Bayésiennes](site.teaching_sb) (2025)
 - Chapitre 1: [pdf](media/teaching/SB/SB-ch1.pdf) (no animation)
 - Chapitre 2:  [pdf](media/teaching/SB/SB-ch2.pdf) (no animation)
 - Chapitre 3:  [pdf](media/teaching/SB/SB-ch3.pdf) (no animation)
