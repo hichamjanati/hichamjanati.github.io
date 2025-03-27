@@ -6,6 +6,7 @@ google_analytics: UA-157013469-1
 home: ./index.html
 research: ./research.html
 teaching: ./teaching.html
+teaching_sb: ./teaching_sb.html
 
 my_github: https://github.com/hichamjanati
 my_scholar: https://scholar.google.com/citations?user=1quGqW0AAAAJ

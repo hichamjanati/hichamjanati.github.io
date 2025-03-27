@@ -1,7 +1,7 @@
 # Teaching
 
 ## INSEA
-#### [Statistiques Bayésiennes](statsbayes.md) (2025)
+#### [Statistiques Bayésiennes](teaching_sb) (2025)
 - Chapitre 1: [pdf](media/teaching/SB/SB-ch1.pdf) (no animation)
 - Chapitre 2:  [pdf](media/teaching/SB/SB-ch2.pdf) (no animation)
 - Chapitre 3:  [pdf](media/teaching/SB/SB-ch3.pdf) (no animation)
@@ -14,7 +14,7 @@
 - TP3: _Intro to PyMC ([notebook](media/teaching/SB/td3_intro_pymc.ipynb))_
 - TP4: _Hierarchical models and bayesian regression ([notebook](media/teaching/SB/hierarchical_model.ipynb))_
 - TD5: _Capture Recapture model in ecology ([pdf](media/teaching/SB/td5_capture.pdf))_ _([python code](media/teaching/SB/capture_recapture_v1.py))_
-- TD6: _Logistic regression frequentist vs bayesian ([pdf](media/teaching/SB/td6.pdf)) ([solutions pdf](media/teaching/SB/td6_solutions.pdf.pdf))_
+- TD6: _Logistic regression frequentist vs bayesian ([pdf](media/teaching/SB/td6.pdf)) ([solutions pdf](media/teaching/SB/td6_solutions.pdf))_
 - TP7: _Logistic regression (notebook in progress)_
 
 ## École Polytechnique
