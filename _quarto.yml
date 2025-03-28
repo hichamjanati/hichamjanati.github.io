@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Hicham Janati"
@@ -31,5 +32,7 @@ format:
 
 resources:
   - media/**
+  - .nojekyll
+
 
 

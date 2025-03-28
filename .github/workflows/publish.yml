@@ -1,0 +1,28 @@
+name: Build and Publish Quarto Website (to docs/)
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render site into docs/
+        run: quarto render
+
+      - name: Commit rendered site
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs/
+          git commit -m "Render Quarto site to docs/"
+          git push
