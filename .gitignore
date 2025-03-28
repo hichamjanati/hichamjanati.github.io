@@ -25,6 +25,5 @@ dist-ssr
 
 media/
 _site/
-docs/*
 
 /.quarto/
