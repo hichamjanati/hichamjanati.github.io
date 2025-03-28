@@ -1,0 +1,36 @@
+---
+title: "Hicham Janati"
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+![](img/me-ghibli.png){width=250px}
+:::
+
+::: {.g-col-12 .g-col-md-8 .padding-top}
+I'm an associate professor at Insea (Rabat) and Télécom Paris. 
+My research and interests gravitate around machine learning with a focus on optimal transport and diffusion models. I’m passionate about exploring ideas deeply and sharing them clearly. This site [in construction] is where I document and share what I’m working on.
+:::
+
+:::
+
+### Short Bio
+In 2021, I obtained both my Master’s and PhD degrees from ENSAE Paris, where I worked under the supervision of Alexandre Gramfort and Marco Cuturi on *optimal transport and its applications in machine learning*. My thesis manuscript is available [here](media/manuscript-hicham-janati.pdf). Following my PhD, I held a postdoctoral position at École Polytechnique, working with Rémi Flamary on *deep learning for domain adaptation*. I have been an Associate Professor at Télécom Paris since December 2021, and I joined INSEA in the same role in January 2025.
+
+
+### News
+
+| Date           | Event |
+|----------------|-------|
+| **Feb 2025**   | *[Spatio-Temporal Alignments](https://arxiv.org/abs/2203.05813)* accepted in *Journal of Machine Learning Research (JMLR)* |
+| **Jan 2025**   | Joined Insea as Associate Professor |
+| **Jun 2023**   | *[Unbalanced Co-Optimal Transport](https://ojs.aaai.org/index.php/AAAI/article/download/26193/25965)* accepted at *AAAI Conference* |
+| **Dec 2021**   | Joined Télécom Paris as Associate Professor |
+| **Apr 2021**   | Started postdoc at École Polytechnique in Rémi Flamary's lab |
+| **Mar 2021**   | Defended PhD — [manuscript](media/manuscript-hicham-janati.pdf) |
+| **Dec 2020**   | Presented *[OT Closed-Form for Gaussians](https://arxiv.org/abs/2006.02572)* at *NeurIPS 2020 (Orals, Virtual)* |
+| **Jul 2020**   | Presented *[Debiased Sinkhorn Barycenters](https://arxiv.org/abs/2006.02575)* at *ICML 2020 (Spotlight, Virtual)* |
+| **Apr 2020**   | Presented *[Spatio-Temporal OT](https://arxiv.org/pdf/1910.03860.pdf)* at *AISTATS 2020 (Virtual)* |
+| **Jun 2019**   | Presented *[Local OT for Brain Template Estimation](https://hal.science/hal-02278663/document)* at *IPMI 2019 (Hong Kong)* |
+| **Apr 2019**   | Presented *[Wasserstein Regularization](https://proceedings.mlr.press/v89/janati19a/janati19a.pdf)* at *AISTATS 2019 (Okinawa, Japan)* |

@@ -1,0 +1,27 @@
+---
+title: "Statistiques Bayésiennes"
+---
+
+### Slides
+
+- Chapter 1: *Bayesian thinking and bayesian models* | [pdf](media/teaching/SB/SB-ch1.pdf) | [browser](media/teaching/SB/SB-ch1/index.html)
+- Chapter 2: *Markov-Chain Monte-Carlo algorithms* | [pdf](media/teaching/SB/SB-ch2.pdf) | [browser](media/teaching/SB/SB-ch2/index.html)
+- Chapter 3: *Hierarchical models and Bayesian machine learning* | [pdf](media/teaching/SB/SB-ch3.pdf) | [browser](media/teaching/SB/SB-ch3/index.html)
+
+### TD/TP
+
+- TD1: _Bayesian models ([pdf](media/teaching/SB/td1_modele_bayesien.pdf))_
+- TP2: _MCMC diagnostics ([pdf](media/teaching/SB/td2_mcmc_diagnostics.pdf))_
+- TP3: _Intro to PyMC ([view notebook](media/teaching/SB/td3_intro_pymc.ipynb))_ | _([download notebook](https://hichamjanati.github.io/media/teaching/SB/td3_intro_pymc.ipynb))_
+- TP4: _Hierarchical models (I): bayesian regression ([view notebook](media/teaching/SB/td4_hierarchical_model.ipynb))_ | _([download notebook](https://hichamjanati.github.io/media/teaching/SB/td4_hierarchical_model.ipynb))_
+- TD5: _Hierarchical models (II): Capture & recapture ([pdf](media/teaching/SB/td5_capture.pdf))_ _([python code](media/teaching/SB/capture_recapture_v1.py))_
+- TD6: _Bayesian ML: logistic regression ([pdf](media/teaching/SB/td6.pdf)) ([solutions pdf](media/teaching/SB/td6_solutions.pdf))_
+- TP7: _Bayesian ML: Logistic regression (notebook in progress)_
+
+### Test yourself
+
+- General anonymous [quiz](https://forms.gle/etP9JVKy1jV72tLe7)
+
+### Feedback
+
+If you took this course, please give your anonymous feedback to improve it: [google form](https://forms.gle/HZuVCYRAnJFRk1316). 

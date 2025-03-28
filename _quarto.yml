@@ -1,0 +1,35 @@
+project:
+  type: website
+
+website:
+  title: "Hicham Janati"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: research.qmd
+        text: Research
+      - href: teaching.qmd
+        text: Teaching
+      - href: contact.qmd
+        text: Contact
+  page-footer:
+    center: "© 2025 Hicham Janati"
+
+format:
+  html:
+    theme:
+      # - minty
+      - simplex
+      # - lux
+      # - flatly
+      # - cosmo
+      # - brand
+    css: styles.css
+    toc: true
+
+
+resources:
+  - media/**
+
+

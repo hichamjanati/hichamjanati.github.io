@@ -1,0 +1,16 @@
+/* css styles */
+
+.float-left {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.padding-top {
+  padding-top: 2rem;
+}
+
+.grid {
+  gap: 2rem;
+  align-items: start;
+}
