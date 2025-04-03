@@ -33,6 +33,7 @@ format:
 resources:
   - media/**
   - .nojekyll
+  - data/*.csv
 
 
 

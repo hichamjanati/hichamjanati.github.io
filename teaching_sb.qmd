@@ -16,7 +16,7 @@ title: "Statistiques Bayésiennes"
 - TP4: _Hierarchical models (I): bayesian regression ([view notebook](media/teaching/SB/td4_hierarchical_model.ipynb))_ | _([download notebook](https://hichamjanati.github.io/media/teaching/SB/td4_hierarchical_model.ipynb))_
 - TD5: _Hierarchical models (II): Capture & recapture ([pdf](media/teaching/SB/td5_capture.pdf))_ _([python code](media/teaching/SB/capture_recapture_v1.py))_
 - TD6: _Bayesian ML: logistic regression ([pdf](media/teaching/SB/td6.pdf)) ([solutions pdf](media/teaching/SB/td6_solutions.pdf))_
-- TP7: _Bayesian ML: Logistic regression (notebook in progress)_
+- TP7: _Bayesian ML for churn prediction ([view notebook](media/teaching/SB/tp7_churn.ipynb))_ | _([download notebook](https://hichamjanati.github.io/media/teaching/SB/tp7_churn.ipynb))_
 
 ### Test yourself
 

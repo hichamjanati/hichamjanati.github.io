@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>tp7_churn – Hicham Janati</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-2c128a76c5dbb243be50ea3089ffe19d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Hicham Janati</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link active" data-scroll-target="#problem-statement">1. Problem Statement</a></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">2. Data preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#one-hot-encoding-dummy-variables" id="toc-one-hot-encoding-dummy-variables" class="nav-link" data-scroll-target="#one-hot-encoding-dummy-variables">2.1 One-hot encoding / dummy variables</a></li>
+  <li><a href="#scaling-numerical-features" id="toc-scaling-numerical-features" class="nav-link" data-scroll-target="#scaling-numerical-features">2.2 Scaling numerical features</a></li>
+  <li><a href="#merging-both-in-one-transformer" id="toc-merging-both-in-one-transformer" class="nav-link" data-scroll-target="#merging-both-in-one-transformer">2.3 Merging both in one transformer:</a></li>
+  <li><a href="#preprocessing-and-the-train-test-split" id="toc-preprocessing-and-the-train-test-split" class="nav-link" data-scroll-target="#preprocessing-and-the-train-test-split">2.4 Preprocessing and the train-test split</a></li>
+  </ul></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression">3. Logistic regression</a>
+  <ul class="collapse">
+  <li><a href="#with-l2-l1-regularization" id="toc-with-l2-l1-regularization" class="nav-link" data-scroll-target="#with-l2-l1-regularization">3.2 With L2 / L1 regularization</a></li>
+  </ul></li>
+  <li><a href="#bayesian-logistic-regression" id="toc-bayesian-logistic-regression" class="nav-link" data-scroll-target="#bayesian-logistic-regression">4. Bayesian logistic regression</a>
+  <ul class="collapse">
+  <li><a href="#fitting-the-model-with-mcmc" id="toc-fitting-the-model-with-mcmc" class="nav-link" data-scroll-target="#fitting-the-model-with-mcmc">4.1 Fitting the model with MCMC</a></li>
+  <li><a href="#making-predictions" id="toc-making-predictions" class="nav-link" data-scroll-target="#making-predictions">4.2 Making predictions</a></li>
+  </ul></li>
+  <li><a href="#how-i-manipulated-the-data" id="toc-how-i-manipulated-the-data" class="nav-link" data-scroll-target="#how-i-manipulated-the-data">5. How I manipulated the data</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<hr>
+<pre> Insea 2025            <i> Statistiques Bayésiennes </i></pre>
+<hr>
+<h1 align="center">
+TP7: Bayesian logistic regression for churn prediction
+</h1>
+<pre align="right">                <i> Author: Hicham Janati </i></pre>
+<hr>
+<p><strong>Objectives:</strong></p>
+<ul>
+<li>Apply a <strong>Bayesian model</strong> to perform <strong>binary prediction</strong></li>
+<li>Understand how <strong>Bayesian modeling helps avoid underfitting and overfitting</strong></li>
+<li>Compare <strong>Bayesian and frequentist approaches</strong></li>
+</ul>
+<div id="cell-1" class="cell" data-execution_count="245">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymc <span class="im">as</span> pm</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>seed <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(seed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="problem-statement" class="level2">
+<h2 class="anchored" data-anchor-id="problem-statement">1. Problem Statement</h2>
+<p>In companies that offer services (such as a mobile phone operator), <strong>customer retention</strong> is a major challenge. The <strong>churn rate</strong> refers to the percentage of customers who decide to cancel their subscription (e.g., to switch to another provider). If the company can <strong>predict which customers are likely to churn</strong>, it can take proactive steps — such as offering additional services or special deals — to retain them.</p>
+<p>We will work with a <strong>real dataset</strong> from a telecom operator (filtered and adapted from: <a href="https://www.kaggle.com/datasets/kapturovalexander/customers-churned-in-telecom-services/data">Kaggle</a>).</p>
+<div id="cell-3" class="cell" data-execution_count="246">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"http://hichamjanati.github.io/data/churn.csv"</span>, index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="246">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Dependents</th>
+<th data-quarto-table-cell-role="th">TechSupport</th>
+<th data-quarto-table-cell-role="th">Contract</th>
+<th data-quarto-table-cell-role="th">InternetService</th>
+<th data-quarto-table-cell-role="th">CustomerID_Region</th>
+<th data-quarto-table-cell-role="th">MonthlyCharges</th>
+<th data-quarto-table-cell-role="th">Months</th>
+<th data-quarto-table-cell-role="th">Churn</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Yes</td>
+<td>No</td>
+<td>One year</td>
+<td>Fiber optic</td>
+<td>MIS-1</td>
+<td>78.95</td>
+<td>34.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Two year</td>
+<td>DSL</td>
+<td>DAL-1</td>
+<td>85.95</td>
+<td>70.0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>No</td>
+<td>Yes</td>
+<td>Two year</td>
+<td>Fiber optic</td>
+<td>SAN-1</td>
+<td>104.00</td>
+<td>69.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>No</td>
+<td>No internet service</td>
+<td>Month-to-month</td>
+<td>No</td>
+<td>HOU-1</td>
+<td>20.55</td>
+<td>5.0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Two year</td>
+<td>Fiber optic</td>
+<td>HOU-1</td>
+<td>113.10</td>
+<td>72.0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="247">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="247">
+<pre><code>Index(['Dependents', 'TechSupport', 'Contract', 'InternetService',
+       'CustomerID_Region', 'MonthlyCharges', 'Months', 'Churn'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="248">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the X and y variables</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df.Churn</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(<span class="st">"Churn"</span>, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Check if the number of class instances we have:</p>
+<div id="cell-7" class="cell" data-execution_count="249">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>y.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="249">
+<pre><code>Churn
+0    100
+1    100
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>This binary classification task is balanced: (in practice churn rates are significantly lower, churn prediction is very imbalanced in the real world. I made the problem easier here by resampling from the original data for the sake of simplicity). Let’s check the type of data variables we have:</p>
+<div id="cell-9" class="cell" data-execution_count="250">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>X.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="250">
+<pre><code>Dependents            object
+TechSupport           object
+Contract              object
+InternetService       object
+CustomerID_Region     object
+MonthlyCharges       float64
+Months               float64
+dtype: object</code></pre>
+</div>
+</div>
+<div id="cell-10" class="cell" data-execution_count="251">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>X.Contract.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="251">
+<pre><code>Contract
+Month-to-month    133
+One year           37
+Two year           30
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="data-preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="data-preprocessing">2. Data preprocessing</h2>
+<section id="one-hot-encoding-dummy-variables" class="level3">
+<h3 class="anchored" data-anchor-id="one-hot-encoding-dummy-variables">2.1 One-hot encoding / dummy variables</h3>
+<p>We need to pre-process the data: turn the categorical variables to binary dummy variables. This is called <em>one-hot encoding</em>. Here is how it goes: - for a variable like <em>Contract</em> which takes <em>Month-to-Month</em>, <em>One year</em> or <em>Two year</em> (three categories) we can transform it to a 3 binary variables:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>…</th>
+<th>Contract</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>…</td>
+<td>Month-to-Month</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>One Year</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>Two Year</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>Month-to-Month</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>Two Year</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>Two Year</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>↓</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>…</th>
+<th>Month-to-Month</th>
+<th>One Year</th>
+<th>Two Year</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>…</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>These binary variables are called <em>dummy variables</em> or the one-hot encoding of <em>Contract</em>. However you can notice that the sum of these columns will always be 1: the 3 binary variables are linearly dependent which is bad for linear models (particularly if no regularization is used), this is called a <em>dummy variables trap</em>. We should drop one of the columns to avoid it. Thus, a categorical variable with K categories is transformed into K-1 binary variables. We can do this with sklearn <em>transformer</em> object called <em>OneHotEncoder</em>:</p>
+<div id="cell-12" class="cell" data-execution_count="252">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>encoder <span class="op">=</span> OneHotEncoder(drop<span class="op">=</span><span class="st">'first'</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>encoded_data <span class="op">=</span> encoder.fit_transform(df[[<span class="st">"Contract"</span>]])</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>encoded_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="252">
+<pre><code>&lt;200x2 sparse matrix of type '&lt;class 'numpy.float64'&gt;'
+    with 67 stored elements in Compressed Sparse Row format&gt;</code></pre>
+</div>
+</div>
+<p>The output is a sparse matrix (CSR) which is a compressed form of storing matrices with lots of zeros: instead of storing all their entries, we only store in memory necessary information (for e.g the triplets (i, j, v) such that M[i, j] = v and v is not zero). Here the data is small, no need to used sparse matrices:</p>
+<div id="cell-14" class="cell" data-execution_count="253">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>encoder <span class="op">=</span> OneHotEncoder(drop<span class="op">=</span><span class="st">'first'</span>, sparse_output<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>encoded_data <span class="op">=</span> encoder.fit_transform(X[[<span class="st">"Contract"</span>]])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>encoded_data[:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="253">
+<pre><code>array([[1., 0.],
+       [0., 1.],
+       [0., 1.],
+       [0., 0.],
+       [0., 1.],
+       [0., 0.],
+       [1., 0.],
+       [1., 0.],
+       [0., 0.],
+       [0., 0.]])</code></pre>
+</div>
+</div>
+<p>We can apply this to all categorical variables:</p>
+<div id="cell-16" class="cell" data-execution_count="254">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>encoder <span class="op">=</span> OneHotEncoder(drop<span class="op">=</span><span class="st">'first'</span>, sparse_output<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>categorical_features <span class="op">=</span> [<span class="st">"Dependents"</span>, <span class="st">"TechSupport"</span>, <span class="st">"Contract"</span>, <span class="st">"InternetService"</span>, <span class="st">"CustomerID_Region"</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>encoded_data <span class="op">=</span> encoder.fit_transform(X[categorical_features])</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>encoded_data[:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="254">
+<pre><code>array([[1., 0., 0., 1., 0., 1., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0.,
+        0., 0.],
+       [1., 0., 1., 0., 1., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0.],
+       [0., 0., 1., 0., 1., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        1., 0.],
+       [0., 1., 0., 0., 0., 0., 1., 0., 0., 1., 0., 0., 0., 0., 0., 0.,
+        0., 0.],
+       [1., 0., 1., 0., 1., 1., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0.,
+        0., 0.],
+       [0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0.,
+        0., 0.],
+       [0., 0., 0., 1., 0., 1., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0.,
+        0., 0.],
+       [1., 0., 0., 1., 0., 1., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0.,
+        0., 0.],
+       [0., 0., 0., 0., 0., 1., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0.],
+       [0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+        0., 0.]])</code></pre>
+</div>
+</div>
+<p>But later we will have a regression coefficient for each one of these columns, how do we know which one belongs to which ? Well we can get their names from the encoder:</p>
+<div id="cell-18" class="cell" data-execution_count="255">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>encoder.get_feature_names_out(categorical_features)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="255">
+<pre><code>array(['Dependents_Yes', 'TechSupport_No internet service',
+       'TechSupport_Yes', 'Contract_One year', 'Contract_Two year',
+       'InternetService_Fiber optic', 'InternetService_No',
+       'CustomerID_Region_CHI-1', 'CustomerID_Region_DAL-1',
+       'CustomerID_Region_HOU-1', 'CustomerID_Region_LAX-1',
+       'CustomerID_Region_MIA-1', 'CustomerID_Region_MIS-1',
+       'CustomerID_Region_NYC-1', 'CustomerID_Region_PHL-1',
+       'CustomerID_Region_PHX-1', 'CustomerID_Region_SAN-1',
+       'CustomerID_Region_SEA-1'], dtype=object)</code></pre>
+</div>
+</div>
+</section>
+<section id="scaling-numerical-features" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-numerical-features">2.2 Scaling numerical features</h3>
+<p>We also have continuous variables (numerical features): <em>Months</em> and <em>MonthlyCharges</em>. As explained in the last class, it’s important for them to have the same scale (order of magnitude) in a linear model. Scaling a variable means centering it and dividing by its standard deviation:</p>
+<div id="cell-20" class="cell" data-execution_count="256">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>variable <span class="op">=</span> X[<span class="st">"Months"</span>]</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>variable <span class="op">=</span> variable <span class="op">-</span> variable.mean()</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>variable <span class="op">=</span> variable <span class="op">/</span> variable.std()</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>variable.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="256">
+<pre><code>0    0.326288
+1    1.850800
+2    1.808453
+3   -0.901791
+4    1.935495
+Name: Months, dtype: float64</code></pre>
+</div>
+</div>
+<p>It is tedious to do this for each variable, the best way to do it is to use a sklearn <em>transformer</em> called <em>StandardScaler</em>:</p>
+<div id="cell-22" class="cell" data-execution_count="257">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>numeric_features <span class="op">=</span> [<span class="st">"MonthlyCharges"</span>, <span class="st">"Months"</span>]</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>scaled_data <span class="op">=</span> scaler.fit_transform(X[numeric_features])</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>scaled_data[:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="257">
+<pre><code>array([[ 0.37846895,  0.32710679],
+       [ 0.63721955,  1.85544479],
+       [ 1.30442645,  1.81299095],
+       [-1.78025031, -0.90405438],
+       [ 1.64080222,  1.94035245],
+       [ 0.56698725, -1.03141588],
+       [ 1.37835519,  0.58182979],
+       [ 1.04937229,  0.66673745],
+       [ 0.19734354, -0.77669288],
+       [ 0.79062169, -0.73423905]])</code></pre>
+</div>
+</div>
+</section>
+<section id="merging-both-in-one-transformer" class="level3">
+<h3 class="anchored" data-anchor-id="merging-both-in-one-transformer">2.3 Merging both in one transformer:</h3>
+<p>We can handle both categorical and numerical features in one <em>ColumnTransformer</em> object:</p>
+<div id="cell-24" class="cell" data-execution_count="258">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.compose <span class="im">import</span> ColumnTransformer</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.pipeline <span class="im">import</span> Pipeline</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>categorical_features <span class="op">=</span> [<span class="st">"Dependents"</span>, <span class="st">"TechSupport"</span>, <span class="st">"Contract"</span>, <span class="st">"InternetService"</span>, <span class="st">"CustomerID_Region"</span>]</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>numeric_features <span class="op">=</span> [<span class="st">"MonthlyCharges"</span>, <span class="st">"Months"</span>]</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>categorical_transformer <span class="op">=</span> OneHotEncoder(drop<span class="op">=</span><span class="st">"first"</span>, sparse_output<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>numeric_transformer <span class="op">=</span> StandardScaler()</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>preprocessor <span class="op">=</span> ColumnTransformer(</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    transformers<span class="op">=</span>[</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'cat'</span>, categorical_transformer, categorical_features),</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'num'</span>, numeric_transformer, numeric_features),</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>transformed_data <span class="op">=</span> preprocessor.fit_transform(X)</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The shape of the transformed data is </span><span class="sc">{</span>transformed_data<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="co"># we construct a new pandas with the column names:</span></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>column_names <span class="op">=</span> preprocessor.get_feature_names_out()</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>transformed_df <span class="op">=</span> pd.DataFrame(transformed_data, columns<span class="op">=</span>column_names)</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>transformed_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The shape of the transformed data is (200, 20)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="258">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cat__Dependents_Yes</th>
+<th data-quarto-table-cell-role="th">cat__TechSupport_No internet service</th>
+<th data-quarto-table-cell-role="th">cat__TechSupport_Yes</th>
+<th data-quarto-table-cell-role="th">cat__Contract_One year</th>
+<th data-quarto-table-cell-role="th">cat__Contract_Two year</th>
+<th data-quarto-table-cell-role="th">cat__InternetService_Fiber optic</th>
+<th data-quarto-table-cell-role="th">cat__InternetService_No</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_CHI-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_DAL-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_HOU-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_LAX-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_MIA-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_MIS-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_NYC-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_PHL-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_PHX-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_SAN-1</th>
+<th data-quarto-table-cell-role="th">cat__CustomerID_Region_SEA-1</th>
+<th data-quarto-table-cell-role="th">num__MonthlyCharges</th>
+<th data-quarto-table-cell-role="th">num__Months</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.378469</td>
+<td>0.327107</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.637220</td>
+<td>1.855445</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>1.304426</td>
+<td>1.812991</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>-1.780250</td>
+<td>-0.904054</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1.640802</td>
+<td>1.940352</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="preprocessing-and-the-train-test-split" class="level3">
+<h3 class="anchored" data-anchor-id="preprocessing-and-the-train-test-split">2.4 Preprocessing and the train-test split</h3>
+<p>But when developing a machine learing model, we always follow the train-test paradigm where we split train-test data: therefore when transforming / encoding / scaling the variables we should only be using the train data. Otherwise info from the test data will be used by the model: for example, the scaling operation will use test samples to compute the mean and std. Therefore, the column transformer object should be <em>fit</em> on the train only, then we use the <em>transform</em> method on the test data:</p>
+<div id="cell-26" class="cell" data-execution_count="259">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>categorical_features <span class="op">=</span> [<span class="st">"Dependents"</span>, <span class="st">"TechSupport"</span>, <span class="st">"Contract"</span>, <span class="st">"InternetService"</span>, <span class="st">"CustomerID_Region"</span>]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>numeric_features <span class="op">=</span> [<span class="st">"MonthlyCharges"</span>, <span class="st">"Months"</span>]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>categorical_transformer <span class="op">=</span> OneHotEncoder(drop<span class="op">=</span><span class="st">"first"</span>, sparse_output<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>numeric_transformer <span class="op">=</span> StandardScaler()</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>preprocessor <span class="op">=</span> ColumnTransformer(</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    transformers<span class="op">=</span>[</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'cat'</span>, categorical_transformer, categorical_features),</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'num'</span>, numeric_transformer, numeric_features),</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(df, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>y)</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>X_train_processed <span class="op">=</span> preprocessor.fit_transform(X_train)</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>X_test_processed <span class="op">=</span> preprocessor.transform(X_test)</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="co"># we get the column names:</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>column_names <span class="op">=</span> preprocessor.get_feature_names_out()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="logistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="logistic-regression">3. Logistic regression</h2>
+<p>We can now start doing ML models. First, we use logistic regression without regularization:</p>
+<section id="without-regularization" class="level4">
+<h4 class="anchored" data-anchor-id="without-regularization">3.1 Without regularization</h4>
+<div id="cell-28" class="cell" data-execution_count="260">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># we can fit the logistic regression model with no regularization:</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LogisticRegression(penalty<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>model.fit(X_train_processed, y_train.values)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> model.predict(X_train_processed)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>y_test_pred <span class="op">=</span> model.predict(X_test_processed)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model accuracy</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Training accuracy: </span><span class="sc">{</span>accuracy_score(y_train_pred, y_train)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test accuracy: </span><span class="sc">{</span>accuracy_score(y_test_pred, y_test)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Training accuracy: 0.8357
+Test accuracy: 0.6500</code></pre>
+</div>
+</div>
+<p>We can see that the model isn’t quite good: 1. 83% accuracy on the training data means that the model isnt complex enough to predict labels it has already seen 2. 65% accuracy on the test data suggest a big difference between train and test: the models learns a bit of noise in the training data</p>
+<p>We can extract the coefficients and visualize their values:</p>
+<div id="cell-31" class="cell" data-execution_count="261">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>coef <span class="op">=</span> pd.DataFrame(model.coef_, columns<span class="op">=</span>column_names)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>coef.T.plot(kind<span class="op">=</span><span class="st">"bar"</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tp7_churn_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can extract the change in the odd-ratios and visualize their importance in percentages (see TD6):</p>
+<div id="cell-33" class="cell" data-execution_count="262">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>odds_changes <span class="op">=</span> (np.exp(model.coef_) <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>coef <span class="op">=</span> pd.DataFrame(odds_changes, columns<span class="op">=</span>column_names)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>coef.T.plot(kind<span class="op">=</span><span class="st">"bar"</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tp7_churn_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-34" class="cell" data-execution_count="263">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>odds_changes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="263">
+<pre><code>array([[ 184.33978368,  -73.24588216,   10.11408019,  -69.01164118,
+         -42.3604937 , 1867.04450222,  -73.24588216,  -57.30827598,
+         -67.89164809,  -27.90134379,   87.71595551,  -47.99574828,
+         -49.09364831,  -69.35050994,   10.37215112,  190.19346862,
+         -73.42643779,  875.62186833,  -54.79865072,  -77.0485994 ]])</code></pre>
+</div>
+</div>
+<div id="cell-35" class="cell" data-execution_count="264">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>X[<span class="st">"Months"</span>].std(), X[<span class="st">"MonthlyCharges"</span>].std()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="264">
+<pre><code>(23.61410818827673, 27.120965039260753)</code></pre>
+</div>
+</div>
+<p>Some odd percentage changes are off-the-charts ! 1867% increase with Optic Fiber and 875% if the customer is in the region SEA-1 ! Given that the performance of the model is poor here and the coefficient values are very large it is very likely the model has learned noise: regularization is needed.</p>
+</section>
+<section id="with-l2-l1-regularization" class="level3">
+<h3 class="anchored" data-anchor-id="with-l2-l1-regularization">3.2 With L2 / L1 regularization</h3>
+<p>We can now try to improve the model by adding regularization. We can use the <code>LogisticRegressionCV</code> class which will automatically find the best regularization parameter for us:</p>
+<div id="cell-38" class="cell" data-execution_count="265">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegressionCV</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># we can fit the logistic regression model with no regularization:</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LogisticRegressionCV(Cs<span class="op">=</span>np.logspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">100</span>), penalty<span class="op">=</span><span class="st">"l2"</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>model.fit(X_train_processed, y_train.values)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> model.predict(X_train_processed)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>y_test_pred <span class="op">=</span> model.predict(X_test_processed)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model accuracy</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Training accuracy: </span><span class="sc">{</span>accuracy_score(y_train_pred, y_train)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test accuracy: </span><span class="sc">{</span>accuracy_score(y_test_pred, y_test)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Training accuracy: 0.7857
+Test accuracy: 0.7167</code></pre>
+</div>
+</div>
+<p>The test accuracy is slightly improved. The coefficients look very similar:</p>
+<div id="cell-40" class="cell" data-execution_count="266">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>coef <span class="op">=</span> pd.DataFrame(model.coef_, columns<span class="op">=</span>column_names)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>coef.T.plot(kind<span class="op">=</span><span class="st">"bar"</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tp7_churn_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-41" class="cell" data-execution_count="267">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>odds_changes <span class="op">=</span> (np.exp(model.coef_) <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>coef <span class="op">=</span> pd.DataFrame(odds_changes, columns<span class="op">=</span>column_names)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>coef.T.plot(kind<span class="op">=</span><span class="st">"bar"</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tp7_churn_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-42" class="cell" data-execution_count="268">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>X[<span class="st">"Months"</span>].std(), X[<span class="st">"MonthlyCharges"</span>].std()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="268">
+<pre><code>(23.61410818827673, 27.120965039260753)</code></pre>
+</div>
+</div>
+<p>These values are more reasonable ! We can see that the most impactful features are the contract type, months, the monthly charges, internetService with Fiber optic and the SEA-1 region: 1. the longer the subscription (contract type and months) the less likely the customer churns. 2. In particular, for each additional “months std” = 23.6 months -&gt; -45% odds. 3. having a Fiber optic internet / high charges makes the customer more likely to churn 4. In particular, 26% higher odds of churning if the customer has fiber: it could perhaps more competitiveness between providers. 5. For each additional 27$ per month, the customer odds of churning increase by 23.65%. 6. Finally, being in SEA-1 increases the odds by 11%.</p>
+<p>We can also try L1 regularization for sparse coefficients (feature selection):</p>
+<div id="cell-45" class="cell" data-execution_count="269">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LogisticRegressionCV(Cs<span class="op">=</span>np.logspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">100</span>), penalty<span class="op">=</span><span class="st">"l1"</span>, solver<span class="op">=</span><span class="st">"liblinear"</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>model.fit(X_train_processed, y_train.values)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> model.predict(X_train_processed)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>y_test_pred <span class="op">=</span> model.predict(X_test_processed)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model accuracy</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Training accuracy: </span><span class="sc">{</span>accuracy_score(y_train_pred, y_train)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test accuracy: </span><span class="sc">{</span>accuracy_score(y_test_pred, y_test)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Training accuracy: 0.8429
+Test accuracy: 0.6667</code></pre>
+</div>
+</div>
+<div id="cell-46" class="cell" data-execution_count="270">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>coef <span class="op">=</span> pd.DataFrame(model.coef_, columns<span class="op">=</span>column_names)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>coef.T.plot(kind<span class="op">=</span><span class="st">"bar"</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tp7_churn_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-47" class="cell" data-execution_count="271">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>coef <span class="op">=</span> pd.DataFrame(<span class="dv">100</span> <span class="op">*</span> (np.exp(model.coef_) <span class="op">-</span> <span class="dv">1</span>), columns<span class="op">=</span>column_names)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>coef.T.plot(kind<span class="op">=</span><span class="st">"bar"</span>, legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tp7_churn_files/figure-html/cell-28-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The model is similar to the unregularized case, we have 20 dimension with 100 observations: perhaps using feature selection is not a good idea here since the dimension is not that large compared to the number of observations: the Lasso keeps the largest coefficients and reduces the others to near 0.</p>
+<p>With all these models, we can obtain the prediction probability (sigmoid) of 10 samples for e.g using:</p>
+<div id="cell-50" class="cell" data-execution_count="272">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>model.predict_proba(X_test_processed[:<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="272">
+<pre><code>array([[0.22842486, 0.77157514],
+       [0.29932415, 0.70067585],
+       [0.22107175, 0.77892825],
+       [0.45511437, 0.54488563],
+       [0.28544249, 0.71455751],
+       [0.85739176, 0.14260824],
+       [0.67825299, 0.32174701],
+       [0.91052171, 0.08947829],
+       [0.78664728, 0.21335272],
+       [0.50537597, 0.49462403]])</code></pre>
+</div>
+</div>
+<p>The sigmoid probability of the model corresponds to the second column of the output above.</p>
+<p>It outputs a vector of probabilites that sums to 1. We get the prediction class using the argmax or comparing the second column to 0.5:</p>
+<div id="cell-53" class="cell" data-execution_count="273">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>model.predict_proba(X_test_processed[:<span class="dv">10</span>]).argmax(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="273">
+<pre><code>array([1, 1, 1, 1, 1, 0, 0, 0, 0, 0])</code></pre>
+</div>
+</div>
+<div id="cell-54" class="cell" data-execution_count="274">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>(model.predict_proba(X_test_processed[:<span class="dv">10</span>])[:, <span class="dv">1</span>] <span class="op">&gt;</span> <span class="fl">0.5</span>).astype(<span class="bu">int</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="274">
+<pre><code>array([1, 1, 1, 1, 1, 0, 0, 0, 0, 0])</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="bayesian-logistic-regression" class="level2">
+<h2 class="anchored" data-anchor-id="bayesian-logistic-regression">4. Bayesian logistic regression</h2>
+<p>We can now build a bayesian logistic regression with a Gaussian prior using pymc:</p>
+<section id="fitting-the-model-with-mcmc" class="level3">
+<h3 class="anchored" data-anchor-id="fitting-the-model-with-mcmc">4.1 Fitting the model with MCMC</h3>
+<div id="cell-56" class="cell" data-execution_count="275">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymc <span class="im">as</span> pm</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the model</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>n_mcmc_samples <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> <span class="bu">dict</span>(var_names<span class="op">=</span>column_names)</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pm.Model(coords<span class="op">=</span>coords) <span class="im">as</span> logistic_model:</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Priors for weights and intercept</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>    sigma <span class="op">=</span> pm.HalfCauchy(<span class="st">'sigma'</span>, beta<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>    intercept <span class="op">=</span> pm.Normal(<span class="st">'intercept'</span>, mu<span class="op">=</span><span class="dv">0</span>, sigma<span class="op">=</span>sigma)</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>    betas <span class="op">=</span> pm.Normal(<span class="st">'betas'</span>, mu<span class="op">=</span><span class="dv">0</span>, sigma<span class="op">=</span>sigma, shape<span class="op">=</span>X_train_processed.shape[<span class="dv">1</span>])</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Linear predictor</span></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>    mu <span class="op">=</span> pm.math.dot(X_train_processed, betas) <span class="op">+</span> intercept</span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Likelihood (observed outcome)</span></span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>    theta <span class="op">=</span> pm.math.sigmoid(mu)</span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>    y_obs <span class="op">=</span> pm.Bernoulli(<span class="st">'y_obs'</span>, p<span class="op">=</span>theta, observed<span class="op">=</span>y_train)</span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sample from posterior</span></span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>    trace <span class="op">=</span> pm.sample(n_mcmc_samples, tune<span class="op">=</span><span class="dv">1000</span>, return_inferencedata<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>az.summary(trace)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [sigma, intercept, betas]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"9d162efe45194ab2b35aea26fbcceaa0","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 2 seconds.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="275">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">sd</th>
+<th data-quarto-table-cell-role="th">hdi_3%</th>
+<th data-quarto-table-cell-role="th">hdi_97%</th>
+<th data-quarto-table-cell-role="th">mcse_mean</th>
+<th data-quarto-table-cell-role="th">mcse_sd</th>
+<th data-quarto-table-cell-role="th">ess_bulk</th>
+<th data-quarto-table-cell-role="th">ess_tail</th>
+<th data-quarto-table-cell-role="th">r_hat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">intercept</td>
+<td>-0.288</td>
+<td>0.438</td>
+<td>-1.101</td>
+<td>0.542</td>
+<td>0.008</td>
+<td>0.007</td>
+<td>2776.0</td>
+<td>2395.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[0]</td>
+<td>0.345</td>
+<td>0.487</td>
+<td>-0.564</td>
+<td>1.270</td>
+<td>0.008</td>
+<td>0.007</td>
+<td>4078.0</td>
+<td>2611.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[1]</td>
+<td>-0.544</td>
+<td>0.733</td>
+<td>-1.884</td>
+<td>0.875</td>
+<td>0.012</td>
+<td>0.011</td>
+<td>3709.0</td>
+<td>2799.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[2]</td>
+<td>-0.066</td>
+<td>0.457</td>
+<td>-0.935</td>
+<td>0.788</td>
+<td>0.007</td>
+<td>0.007</td>
+<td>4514.0</td>
+<td>2947.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[3]</td>
+<td>-0.838</td>
+<td>0.554</td>
+<td>-1.978</td>
+<td>0.110</td>
+<td>0.009</td>
+<td>0.007</td>
+<td>3821.0</td>
+<td>3307.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[4]</td>
+<td>-0.381</td>
+<td>0.634</td>
+<td>-1.627</td>
+<td>0.768</td>
+<td>0.009</td>
+<td>0.009</td>
+<td>4762.0</td>
+<td>3000.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[5]</td>
+<td>1.041</td>
+<td>0.618</td>
+<td>-0.081</td>
+<td>2.221</td>
+<td>0.014</td>
+<td>0.010</td>
+<td>2181.0</td>
+<td>2661.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[6]</td>
+<td>-0.527</td>
+<td>0.751</td>
+<td>-1.927</td>
+<td>0.908</td>
+<td>0.012</td>
+<td>0.011</td>
+<td>3877.0</td>
+<td>2795.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[7]</td>
+<td>-0.058</td>
+<td>0.688</td>
+<td>-1.452</td>
+<td>1.156</td>
+<td>0.010</td>
+<td>0.011</td>
+<td>4470.0</td>
+<td>2692.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[8]</td>
+<td>-0.581</td>
+<td>0.590</td>
+<td>-1.675</td>
+<td>0.533</td>
+<td>0.010</td>
+<td>0.008</td>
+<td>3326.0</td>
+<td>3316.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[9]</td>
+<td>-0.242</td>
+<td>0.628</td>
+<td>-1.407</td>
+<td>0.969</td>
+<td>0.009</td>
+<td>0.010</td>
+<td>5203.0</td>
+<td>2794.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[10]</td>
+<td>0.250</td>
+<td>0.626</td>
+<td>-0.921</td>
+<td>1.442</td>
+<td>0.008</td>
+<td>0.011</td>
+<td>6243.0</td>
+<td>2790.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[11]</td>
+<td>-0.174</td>
+<td>0.596</td>
+<td>-1.304</td>
+<td>0.934</td>
+<td>0.008</td>
+<td>0.009</td>
+<td>5396.0</td>
+<td>3216.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[12]</td>
+<td>-0.254</td>
+<td>0.556</td>
+<td>-1.341</td>
+<td>0.760</td>
+<td>0.008</td>
+<td>0.008</td>
+<td>4633.0</td>
+<td>2792.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[13]</td>
+<td>-0.555</td>
+<td>0.563</td>
+<td>-1.572</td>
+<td>0.517</td>
+<td>0.010</td>
+<td>0.008</td>
+<td>3570.0</td>
+<td>2551.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[14]</td>
+<td>0.069</td>
+<td>0.605</td>
+<td>-1.032</td>
+<td>1.308</td>
+<td>0.009</td>
+<td>0.010</td>
+<td>4284.0</td>
+<td>2719.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[15]</td>
+<td>0.511</td>
+<td>0.619</td>
+<td>-0.663</td>
+<td>1.683</td>
+<td>0.009</td>
+<td>0.009</td>
+<td>4406.0</td>
+<td>2800.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[16]</td>
+<td>-0.596</td>
+<td>0.588</td>
+<td>-1.736</td>
+<td>0.443</td>
+<td>0.010</td>
+<td>0.008</td>
+<td>3500.0</td>
+<td>2826.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[17]</td>
+<td>0.978</td>
+<td>0.645</td>
+<td>-0.129</td>
+<td>2.278</td>
+<td>0.013</td>
+<td>0.009</td>
+<td>2661.0</td>
+<td>3099.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">betas[18]</td>
+<td>0.215</td>
+<td>0.381</td>
+<td>-0.521</td>
+<td>0.927</td>
+<td>0.007</td>
+<td>0.005</td>
+<td>3335.0</td>
+<td>2299.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">betas[19]</td>
+<td>-1.345</td>
+<td>0.328</td>
+<td>-1.953</td>
+<td>-0.729</td>
+<td>0.006</td>
+<td>0.004</td>
+<td>2985.0</td>
+<td>2600.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">sigma</td>
+<td>0.828</td>
+<td>0.234</td>
+<td>0.439</td>
+<td>1.262</td>
+<td>0.007</td>
+<td>0.005</td>
+<td>1155.0</td>
+<td>1620.0</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>No warnings, all rhats are equal to 1, the ESS are all very large, no red flags of divergences. the MCMC chains pass all diagnostics. To intepret the coefficients, we should check the HDI of the coefficients, if they contain 0 it means that 0 is included in the 94% credible interval: therefore the coefficient is not statistically different from 0:</p>
+<div id="cell-58" class="cell" data-execution_count="276">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>az.plot_forest(trace)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>plt.vlines(<span class="dv">0</span>, <span class="dv">0</span>, ymax<span class="op">=</span><span class="dv">100</span>, color<span class="op">=</span><span class="st">"red"</span>)</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tp7_churn_files/figure-html/cell-33-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>None of them are except sigma and beta[19] which corresponds to the last variable “Months”</p>
+<div id="cell-60" class="cell" data-execution_count="277">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>column_names[<span class="dv">19</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="277">
+<pre><code>'num__Months'</code></pre>
+</div>
+</div>
+<div id="cell-61" class="cell" data-execution_count="278">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="op">*</span> (np.exp(<span class="op">-</span><span class="fl">1.352</span>) <span class="op">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="278">
+<pre><code>-74.127770174036</code></pre>
+</div>
+</div>
+</section>
+<section id="making-predictions" class="level3">
+<h3 class="anchored" data-anchor-id="making-predictions">4.2 Making predictions</h3>
+<p>How do we make predictions with this model ? Well, we can use the MCMC samples (beta) to compute the sigmoid probabilities on the test data:</p>
+<div id="cell-63" class="cell" data-execution_count="279">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>beta_samples <span class="op">=</span> trace.posterior[<span class="st">"betas"</span>].values.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">20</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>beta_samples.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="279">
+<pre><code>(4000, 20)</code></pre>
+</div>
+</div>
+<div id="cell-64" class="cell" data-execution_count="280">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>intercept_samples <span class="op">=</span> trace.posterior[<span class="st">"intercept"</span>].values.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>intercept_samples.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="280">
+<pre><code>(4000, 1)</code></pre>
+</div>
+</div>
+<div id="cell-65" class="cell" data-execution_count="281">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> expit <span class="im">as</span> sigmoid</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_bayes_probas(X, trace):</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>    beta_samples <span class="op">=</span> trace.posterior[<span class="st">"betas"</span>].values.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">20</span>)</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># vector of size 4000 x 20</span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>    intercept_samples <span class="op">=</span> trace.posterior[<span class="st">"intercept"</span>].values.reshape(<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># vector of size 4000 x 1</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># X test is of size n_samples x 20 so we transpose beta_samples to have a size 20 x 4000</span></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># then we transpose the output to be 4000 x n_samples compatible with intercept_samples of size 1 x 4000</span></span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>    logits <span class="op">=</span> X.dot(beta_samples.T) <span class="op">+</span> intercept_samples</span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># we have a vector of size n_samples x 4000</span></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> sigmoid(logits)</span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>probas_bayes_train <span class="op">=</span> get_bayes_probas(X_train_processed, trace)</span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a>probas_bayes_test <span class="op">=</span> get_bayes_probas(X_test_processed, trace)</span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>probas_bayes_train.shape, probas_bayes_test.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="281">
+<pre><code>((140, 4000), (60, 4000))</code></pre>
+</div>
+</div>
+<p>We have 4000 different predictions for each of the 60 test samples, we can compute the average prediction and the standard deviation to evaluate our uncertainty:</p>
+<div id="cell-67" class="cell" data-execution_count="282">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>mean_proba_bayes_train <span class="op">=</span> probas_bayes_train.mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>std_proba_bayes_train <span class="op">=</span> probas_bayes_train.std(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>mean_proba_bayes_test <span class="op">=</span> probas_bayes_test.mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>std_proba_bayes_test <span class="op">=</span> probas_bayes_test.std(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>bayes_predictions_train <span class="op">=</span> (mean_proba_bayes_train <span class="op">&gt;</span> <span class="fl">0.5</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>bayes_predictions_test <span class="op">=</span> (mean_proba_bayes_test <span class="op">&gt;</span> <span class="fl">0.5</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Training accuracy: </span><span class="sc">{</span>accuracy_score(y_train, bayes_predictions_train)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test accuracy: </span><span class="sc">{</span>accuracy_score(y_test, bayes_predictions_test)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Training accuracy: 0.8071
+Test accuracy: 0.6833</code></pre>
+</div>
+</div>
+<p>It seems like the performance is similar or even a bit worse than the frequentist approach (Ridge). Why go through the trouble of MCMC then ? Well, because we can compute also uncertainties around those mean predictions of the MCMC samples. For example, with the frequentist approach we would get the the probability of churn is 0.8. With the bayesian approach we have 4000 probabilities of churn for each sample, assume their mean is identical: 0.8. With the 4000 MCMC samples we can also compute an HDI of those probabilities. If the HDI is too large say [0.3, 1.] then we cannot say for sure that 0.8 is statistically significant. If however the HDI is [0.7, 0.9] (it is far from 0.5) then we are more confident in our prediction.</p>
+<p>In practice, the companies does not want to have many false positives (predict churn for customers who are actually satisfied and won’t leave) because it costs money (ads, promo deals to retain them…). So it might use the bayesian approach to only target the customers with predicted churn <strong>and</strong> high certainty. For the predicted churns with low certainty it may send them a satisfaction survey to be more certain.</p>
+</section>
+</section>
+<section id="how-i-manipulated-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-i-manipulated-the-data">5. How I manipulated the data</h2>
+<p>To illustrate the regularization here I truncated data to only 200 samples (from 10K samples in the kaggle dataset) and kept only a few variables otherwise MCMC would be too slow. And I also added fake variables: the region variable is purely random, completely unrelated to the churn variable. Yet, the regression (and Lasso) found a large coefficient for one of the regions ! This is to illustrate how models with little data can learn noise and lead to wrong intepretations of the coefficients: L2 regularization (and the bayesian approach however correctly reduced their amplitudes).</p>
+<p>Let’s remove the region variable and see what happens. Before, we obtained with the unregularized model using the Regions:</p>
+<ul>
+<li>Training accuracy: 0.8357</li>
+<li>Test accuracy: 0.6500</li>
+</ul>
+<div id="cell-70" class="cell" data-execution_count="243">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>categorical_features <span class="op">=</span> [<span class="st">"Dependents"</span>, <span class="st">"TechSupport"</span>, <span class="st">"Contract"</span>, <span class="st">"InternetService"</span>]</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>numeric_features <span class="op">=</span> [<span class="st">"MonthlyCharges"</span>, <span class="st">"Months"</span>]</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>categorical_transformer <span class="op">=</span> OneHotEncoder(drop<span class="op">=</span><span class="st">"first"</span>, sparse_output<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>numeric_transformer <span class="op">=</span> StandardScaler()</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>preprocessor <span class="op">=</span> ColumnTransformer(</span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>    transformers<span class="op">=</span>[</span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'cat'</span>, categorical_transformer, categorical_features),</span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'num'</span>, numeric_transformer, numeric_features),</span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>y)</span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-16"><a href="#cb67-16" aria-hidden="true" tabindex="-1"></a>X_train_processed <span class="op">=</span> preprocessor.fit_transform(X_train)</span>
+<span id="cb67-17"><a href="#cb67-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-18"><a href="#cb67-18" aria-hidden="true" tabindex="-1"></a>X_test_processed <span class="op">=</span> preprocessor.transform(X_test)</span>
+<span id="cb67-19"><a href="#cb67-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-20"><a href="#cb67-20" aria-hidden="true" tabindex="-1"></a><span class="co"># we get the column names:</span></span>
+<span id="cb67-21"><a href="#cb67-21" aria-hidden="true" tabindex="-1"></a>column_names <span class="op">=</span> preprocessor.get_feature_names_out()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-71" class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can fit the logistic regression model with no regularization:</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LogisticRegression(penalty<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>model.fit(X_train_processed, y_train.values)</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> model.predict(X_train_processed)</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>y_test_pred <span class="op">=</span> model.predict(X_test_processed)</span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model accuracy</span></span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Training accuracy: </span><span class="sc">{</span>accuracy_score(y_train_pred, y_train)<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test accuracy: </span><span class="sc">{</span>accuracy_score(y_test_pred, y_test)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Training accuracy: 0.8214
+Test accuracy: 0.6833</code></pre>
+</div>
+</div>
+<p>Slightly less train accuracy, more test accuracy: the model’s overfitting is reduced a little bit.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 Hicham Janati</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

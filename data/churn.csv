@@ -1,0 +1,201 @@
+,Dependents,TechSupport,Contract,InternetService,CustomerID_Region,MonthlyCharges,Months,Churn
+0,Yes,No,One year,Fiber optic,MIS-1,78.95,34.0,0
+1,Yes,Yes,Two year,DSL,DAL-1,85.95,70.0,0
+2,No,Yes,Two year,Fiber optic,SAN-1,104.0,69.0,0
+3,No,No internet service,Month-to-month,No,HOU-1,20.55,5.0,0
+4,Yes,Yes,Two year,Fiber optic,HOU-1,113.1,72.0,0
+5,No,No,Month-to-month,Fiber optic,NYC-1,84.05,2.0,0
+6,No,No,One year,Fiber optic,NYC-1,106.0,40.0,0
+7,Yes,No,One year,Fiber optic,NYC-1,97.1,42.0,0
+8,No,No,Month-to-month,Fiber optic,CHI-1,74.05,8.0,0
+9,No,No,Month-to-month,Fiber optic,BOS-1,90.1,9.0,0
+10,No,No,Month-to-month,DSL,DAL-1,51.8,20.0,0
+11,No,No internet service,Two year,No,MIS-1,19.5,53.0,0
+12,No,No,Two year,Fiber optic,SAN-1,75.65,70.0,0
+13,No,No,Month-to-month,Fiber optic,DAL-1,79.55,9.0,0
+14,Yes,No internet service,Month-to-month,No,SEA-1,24.7,21.0,0
+15,No,No,Month-to-month,Fiber optic,MIA-1,79.0,33.0,0
+16,No,Yes,Two year,DSL,DAL-1,83.25,51.0,0
+17,Yes,Yes,Month-to-month,DSL,SAN-1,54.35,31.0,0
+18,No,No internet service,Two year,No,SAN-1,19.85,53.0,0
+19,No,Yes,One year,DSL,SEA-1,53.6,53.0,0
+20,No,No,Month-to-month,Fiber optic,HOU-1,74.3,25.0,0
+21,No,Yes,Two year,Fiber optic,BOS-1,113.4,72.0,0
+22,No,Yes,Two year,DSL,MIA-1,59.9,58.0,0
+23,No,No,Month-to-month,Fiber optic,NYC-1,76.45,14.0,0
+24,No,Yes,One year,DSL,PHX-1,81.25,64.0,0
+25,No,Yes,Month-to-month,Fiber optic,MIS-1,95.65,17.0,0
+26,Yes,No,One year,Fiber optic,SAN-1,95.95,53.0,0
+27,No,No internet service,Month-to-month,No,NYC-1,20.45,8.0,0
+28,Yes,No,One year,Fiber optic,BOS-1,99.9,61.0,0
+29,Yes,No,Month-to-month,Fiber optic,MIA-1,90.6,11.0,0
+30,Yes,Yes,One year,Fiber optic,MIS-1,108.45,66.0,0
+31,No,No,Two year,DSL,CHI-1,84.1,72.0,0
+32,Yes,Yes,Two year,DSL,LAX-1,48.9,72.0,0
+33,No,No,Month-to-month,DSL,MIS-1,71.95,13.0,0
+34,No,No,Month-to-month,DSL,NYC-1,51.4,2.0,0
+35,No,No,One year,Fiber optic,SAN-1,99.1,39.0,0
+36,No,No internet service,Two year,No,NYC-1,20.6,40.0,0
+37,No,No,Month-to-month,DSL,HOU-1,54.65,3.0,0
+38,Yes,No internet service,Two year,No,PHL-1,24.8,40.0,0
+39,No,No internet service,One year,No,PHL-1,25.6,22.0,0
+40,No,No internet service,One year,No,PHX-1,19.1,51.0,0
+41,Yes,Yes,Month-to-month,DSL,NYC-1,61.8,13.0,0
+42,No,No internet service,One year,No,NYC-1,19.8,32.0,0
+43,No,Yes,One year,DSL,LAX-1,35.45,41.0,0
+44,No,Yes,Two year,DSL,NYC-1,57.8,70.0,0
+45,No,No,Month-to-month,Fiber optic,MIA-1,89.45,31.0,0
+46,No,No,Month-to-month,Fiber optic,SAN-1,93.35,33.0,0
+47,Yes,Yes,Two year,DSL,DAL-1,52.5,24.0,0
+48,No,Yes,Month-to-month,DSL,HOU-1,60.45,24.0,0
+49,No,No,Month-to-month,DSL,DAL-1,60.9,6.0,0
+50,No,No internet service,Two year,No,BOS-1,20.3,69.0,0
+51,Yes,Yes,Two year,Fiber optic,PHX-1,114.6,71.0,0
+52,No,No,Month-to-month,Fiber optic,PHL-1,75.6,9.0,0
+53,No,Yes,Two year,DSL,SEA-1,64.55,70.0,0
+54,Yes,Yes,One year,DSL,BOS-1,71.9,43.0,0
+55,No,No internet service,Two year,No,SEA-1,18.4,59.0,0
+56,No,No internet service,Month-to-month,No,PHX-1,24.85,22.0,0
+57,No,Yes,Two year,DSL,MIA-1,87.1,54.0,0
+58,Yes,No internet service,Two year,No,SEA-1,20.35,54.0,0
+59,Yes,No,Month-to-month,DSL,DAL-1,50.1,19.0,0
+60,No,No internet service,One year,No,MIS-1,19.9,17.0,0
+61,Yes,Yes,Two year,Fiber optic,MIA-1,110.3,64.0,0
+62,No,No,One year,Fiber optic,MIA-1,100.9,67.0,0
+63,No,No internet service,Two year,No,PHX-1,19.7,72.0,0
+64,Yes,No internet service,One year,No,MIS-1,19.9,25.0,0
+65,No,Yes,One year,Fiber optic,LAX-1,104.55,21.0,0
+66,No,No,One year,Fiber optic,SAN-1,103.95,50.0,0
+67,No,No internet service,One year,No,MIA-1,20.15,17.0,0
+68,No,Yes,Two year,DSL,MIS-1,35.4,13.0,0
+69,Yes,No,Month-to-month,DSL,SAN-1,35.5,16.0,0
+70,No,No,Month-to-month,DSL,PHX-1,48.8,15.0,0
+71,Yes,Yes,Month-to-month,DSL,HOU-1,55.35,17.0,0
+72,No,No,Month-to-month,DSL,PHL-1,51.15,24.0,0
+73,No,Yes,Month-to-month,DSL,PHL-1,49.15,26.0,0
+74,No,No,Two year,Fiber optic,MIA-1,97.85,72.0,0
+75,No,No,Month-to-month,DSL,MIS-1,45.6,1.0,0
+76,Yes,Yes,One year,Fiber optic,NYC-1,105.1,69.0,0
+77,No,Yes,Month-to-month,DSL,SEA-1,33.45,35.0,0
+78,No,No,Month-to-month,DSL,SAN-1,49.7,24.0,0
+79,No,No,Month-to-month,Fiber optic,PHX-1,90.85,70.0,0
+80,No,No internet service,One year,No,MIA-1,20.15,24.0,0
+81,No,Yes,Month-to-month,DSL,SAN-1,35.75,10.0,0
+82,No,Yes,One year,Fiber optic,HOU-1,93.55,65.0,0
+83,No,No,Month-to-month,DSL,HOU-1,63.05,16.0,0
+84,Yes,No,Month-to-month,DSL,MIA-1,57.2,4.0,0
+85,No,No,Month-to-month,DSL,DAL-1,69.45,24.0,0
+86,No,No internet service,One year,No,SAN-1,20.85,71.0,0
+87,No,Yes,One year,Fiber optic,PHX-1,90.15,34.0,0
+88,Yes,Yes,One year,DSL,BOS-1,61.0,54.0,0
+89,No,No,One year,Fiber optic,PHX-1,105.6,67.0,0
+90,Yes,Yes,Month-to-month,DSL,HOU-1,69.5,15.0,0
+91,Yes,Yes,One year,DSL,MIS-1,54.75,25.0,0
+92,No,Yes,One year,DSL,HOU-1,60.8,69.0,0
+93,No,No internet service,Two year,No,CHI-1,19.65,53.0,0
+94,Yes,Yes,Month-to-month,Fiber optic,MIA-1,100.75,27.0,0
+95,No,No,Month-to-month,DSL,DAL-1,48.95,29.0,0
+96,No,Yes,Month-to-month,Fiber optic,NYC-1,95.7,25.0,0
+97,No,Yes,Two year,DSL,LAX-1,79.85,63.0,0
+98,No,No internet service,Month-to-month,No,PHX-1,25.25,4.0,0
+99,No,No,Month-to-month,Fiber optic,BOS-1,100.5,47.0,0
+100,Yes,No,Month-to-month,Fiber optic,PHX-1,69.25,1.0,1
+101,No,No,Month-to-month,Fiber optic,BOS-1,70.0,34.0,1
+102,No,No internet service,Month-to-month,No,HOU-1,24.05,1.0,1
+103,No,No,Month-to-month,Fiber optic,CHI-1,80.6,2.0,1
+104,No,No,Month-to-month,Fiber optic,BOS-1,100.35,13.0,1
+105,No,No,Month-to-month,Fiber optic,MIS-1,99.95,19.0,1
+106,No,No,Month-to-month,Fiber optic,NYC-1,89.45,9.0,1
+107,No,No,Month-to-month,Fiber optic,NYC-1,94.4,9.0,1
+108,No,No,Two year,Fiber optic,MIA-1,93.7,71.0,1
+109,No,Yes,Month-to-month,DSL,PHX-1,50.05,4.0,1
+110,No,Yes,Month-to-month,DSL,SAN-1,29.7,15.0,1
+111,No,Yes,One year,Fiber optic,LAX-1,115.65,70.0,1
+112,No,No,Month-to-month,DSL,MIS-1,49.9,3.0,1
+113,No,No,One year,Fiber optic,PHL-1,94.4,60.0,1
+114,No,No,Month-to-month,Fiber optic,MIS-1,91.05,3.0,1
+115,No,No,Month-to-month,Fiber optic,BOS-1,83.9,38.0,1
+116,No,Yes,Two year,Fiber optic,MIA-1,80.45,39.0,1
+117,Yes,No,Month-to-month,Fiber optic,CHI-1,94.5,6.0,1
+118,No,No,Month-to-month,Fiber optic,BOS-1,105.5,8.0,1
+119,No,Yes,Month-to-month,Fiber optic,NYC-1,85.15,30.0,1
+120,No,No,Month-to-month,DSL,SAN-1,35.45,3.0,1
+121,No,No,Month-to-month,Fiber optic,PHX-1,89.5,2.0,1
+122,Yes,No,Month-to-month,DSL,SEA-1,50.9,4.0,1
+123,No,No,Month-to-month,Fiber optic,CHI-1,70.25,5.0,1
+124,Yes,No,Month-to-month,DSL,SEA-1,59.2,1.0,1
+125,Yes,No,Month-to-month,Fiber optic,LAX-1,92.55,17.0,1
+126,No,No,Month-to-month,Fiber optic,DAL-1,68.95,1.0,1
+127,No,No,Month-to-month,Fiber optic,SAN-1,70.15,13.0,1
+128,No,No,Month-to-month,Fiber optic,MIS-1,81.0,4.0,1
+129,No,No,Month-to-month,Fiber optic,HOU-1,78.9,29.0,1
+130,No,Yes,Month-to-month,DSL,MIS-1,51.5,17.0,1
+131,No,No,Month-to-month,Fiber optic,MIA-1,80.2,15.0,1
+132,No,No,Month-to-month,DSL,MIS-1,35.25,1.0,1
+133,No,No,Month-to-month,DSL,CHI-1,39.65,1.0,1
+134,No,No,Month-to-month,DSL,BOS-1,45.95,1.0,1
+135,No,No,Month-to-month,DSL,SEA-1,55.0,35.0,1
+136,No,No,Month-to-month,DSL,NYC-1,44.1,1.0,1
+137,No,No,Month-to-month,Fiber optic,PHX-1,85.25,10.0,1
+138,No,Yes,One year,Fiber optic,DAL-1,109.55,43.0,1
+139,Yes,No,Month-to-month,DSL,LAX-1,50.85,4.0,1
+140,Yes,Yes,One year,Fiber optic,SAN-1,94.35,67.0,1
+141,No,No,Month-to-month,DSL,DAL-1,35.2,3.0,1
+142,No,No,Month-to-month,Fiber optic,BOS-1,74.9,2.0,1
+143,No,No,Month-to-month,Fiber optic,SEA-1,95.45,18.0,1
+144,No,No,Month-to-month,Fiber optic,PHX-1,78.85,24.0,1
+145,No,No,Month-to-month,DSL,PHL-1,54.3,4.0,1
+146,No,No,One year,Fiber optic,PHL-1,95.8,33.0,1
+147,No,No,Month-to-month,Fiber optic,SEA-1,68.95,2.0,1
+148,No,No,Month-to-month,DSL,CHI-1,45.65,1.0,1
+149,No,No,Month-to-month,Fiber optic,PHL-1,80.85,1.0,1
+150,No,No,Month-to-month,DSL,NYC-1,50.55,1.0,1
+151,Yes,No internet service,Month-to-month,No,PHL-1,19.45,1.0,1
+152,No,No,Month-to-month,Fiber optic,SEA-1,76.5,11.0,1
+153,No,No,Month-to-month,Fiber optic,DAL-1,76.45,17.0,1
+154,Yes,No,Month-to-month,DSL,PHX-1,40.05,22.0,1
+155,Yes,Yes,Month-to-month,Fiber optic,SEA-1,104.2,31.0,1
+156,No,Yes,Month-to-month,Fiber optic,DAL-1,85.4,5.0,1
+157,No,No,Month-to-month,Fiber optic,SEA-1,70.85,1.0,1
+158,No,No,Month-to-month,DSL,NYC-1,24.8,1.0,1
+159,Yes,No,Month-to-month,DSL,PHL-1,50.45,1.0,1
+160,No,No,Month-to-month,Fiber optic,MIS-1,70.3,35.0,1
+161,No,No,Month-to-month,Fiber optic,BOS-1,105.25,65.0,1
+162,No,No,One year,Fiber optic,PHX-1,85.55,59.0,1
+163,No,No,Month-to-month,Fiber optic,PHL-1,84.5,1.0,1
+164,No,No,Month-to-month,Fiber optic,PHL-1,69.2,1.0,1
+165,Yes,No,Month-to-month,DSL,SAN-1,58.6,25.0,1
+166,No,No,Month-to-month,Fiber optic,CHI-1,95.0,1.0,1
+167,Yes,No internet service,Month-to-month,No,BOS-1,20.15,1.0,1
+168,No,Yes,Month-to-month,Fiber optic,NYC-1,90.15,11.0,1
+169,Yes,No,Month-to-month,Fiber optic,PHX-1,79.35,9.0,1
+170,Yes,Yes,One year,DSL,HOU-1,80.3,38.0,1
+171,No,No,Month-to-month,Fiber optic,MIA-1,95.45,4.0,1
+172,No,Yes,Month-to-month,Fiber optic,MIA-1,87.55,36.0,1
+173,Yes,No,Month-to-month,Fiber optic,MIA-1,88.25,17.0,1
+174,No,Yes,Two year,Fiber optic,SEA-1,111.6,61.0,1
+175,No,Yes,Month-to-month,Fiber optic,SEA-1,91.7,1.0,1
+176,No,No,Month-to-month,Fiber optic,CHI-1,69.35,1.0,1
+177,No,No internet service,Month-to-month,No,LAX-1,19.3,1.0,1
+178,No,No,Month-to-month,Fiber optic,LAX-1,96.2,49.0,1
+179,No,No,Month-to-month,DSL,MIA-1,45.85,2.0,1
+180,No,Yes,Month-to-month,Fiber optic,SEA-1,90.0,22.0,1
+181,No,No,Month-to-month,Fiber optic,SEA-1,70.3,3.0,1
+182,Yes,No,Month-to-month,Fiber optic,MIA-1,78.65,1.0,1
+183,No,No,One year,Fiber optic,SEA-1,95.5,12.0,1
+184,Yes,No,Month-to-month,Fiber optic,MIS-1,69.75,1.0,1
+185,No,No,Month-to-month,Fiber optic,NYC-1,80.25,24.0,1
+186,No,Yes,Month-to-month,Fiber optic,LAX-1,103.3,28.0,1
+187,No,No,Month-to-month,Fiber optic,MIS-1,75.3,1.0,1
+188,No,No,Month-to-month,Fiber optic,NYC-1,76.95,3.0,1
+189,No,No,Month-to-month,Fiber optic,SEA-1,73.55,1.0,1
+190,No,No,Month-to-month,Fiber optic,BOS-1,98.3,9.0,1
+191,No,Yes,Month-to-month,DSL,SEA-1,65.25,31.0,1
+192,No,No,Month-to-month,Fiber optic,PHX-1,85.15,6.0,1
+193,No,Yes,Month-to-month,Fiber optic,LAX-1,85.8,3.0,1
+194,No,No,Month-to-month,Fiber optic,SAN-1,69.9,1.0,1
+195,No,No,Month-to-month,Fiber optic,SEA-1,74.4,4.0,1
+196,No,No,Month-to-month,Fiber optic,PHX-1,100.75,11.0,1
+197,No,No,Month-to-month,Fiber optic,MIS-1,70.95,25.0,1
+198,No,No,Month-to-month,Fiber optic,PHX-1,69.6,2.0,1
+199,No,No,Month-to-month,Fiber optic,BOS-1,85.3,32.0,1
