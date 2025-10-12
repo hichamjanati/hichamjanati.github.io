@@ -13,7 +13,7 @@ website:
       - href: teaching.qmd
         text: Teaching
       - href: contact.qmd
-        text: Contact
+        text: Contact / Feedback
   page-footer:
     center: "© 2025 Hicham Janati"
 
