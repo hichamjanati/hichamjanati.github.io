@@ -1,5 +1,5 @@
 ---
-title: "Contact"
+title: "Contact / Feedback"
 ---
 
 #### INSEA
@@ -15,4 +15,5 @@ hjanati@insea.ac.ma
 
 hicham.janati@telecom-paris.fr
 
-You're a student and want to share feedback anonymously ? Here's a google [form](https://forms.gle/u2EiHSAbS2itEuWaA) you can fill.
+#### Anyonymous Feedback
+You're a student and want to share feedback anonymously ? Here's a [google form](https://forms.gle/u2EiHSAbS2itEuWaA) you can fill. Constructive feedback is always appreciated.
