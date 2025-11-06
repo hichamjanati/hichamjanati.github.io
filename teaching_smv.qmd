@@ -1,5 +1,5 @@
 ---
-title: "Statistiques Bayésiennes"
+title: "Statistiques Multivariées"
 ---
 
 ### Slides
