@@ -1,0 +1,22 @@
+---
+title: "Statistiques Bayésiennes"
+---
+
+### Slides
+
+- Cours complet [pdf](media/teaching/SMV/SMV-DS-full-2025.pdf)
+
+
+### Projet
+
+(bientôt)
+
+### Test yourself
+
+- Anonymous [quiz 1](https://forms.gle/zabFesUmZA5jJNUx7)
+- Anonymous [quiz 2](https://forms.gle/UgWfR78qasAxjzNw6)
+- Anonymous [quiz 3](https://forms.gle/QiuUu7aaYB3HRLmQ8)
+
+### Feedback
+
+If you took this course, please give your anonymous feedback to improve it: [google form](https://forms.gle/1K3FQDhFGW5HBCPW9). 

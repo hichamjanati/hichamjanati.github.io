@@ -5,6 +5,7 @@ title: "Teaching"
 #### INSEA
 
 - *[Statistiques Bayésiennes](./teaching_sb.qmd) (2025)*
+- *[Statistiques Multivariées](./teaching_smv.qmd) (2025)*
 
 #### École Polytechnique
 
