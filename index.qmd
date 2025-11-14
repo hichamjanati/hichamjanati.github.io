@@ -16,7 +16,7 @@ My research and interests gravitate around machine learning with a focus on opti
 :::
 
 ### Short Bio
-In 2021, I obtained both my Master’s and PhD degrees from ENSAE Paris, where I worked under the supervision of Alexandre Gramfort and Marco Cuturi on *optimal transport and its applications in machine learning*. My thesis manuscript is available [here](media/manuscript-hicham-janati.pdf). Following my PhD, I held a postdoctoral position at École Polytechnique, working with Rémi Flamary on *deep learning for domain adaptation*. I have been an Associate Professor at Télécom Paris since December 2021, and I joined INSEA in the same role in January 2025.
+I obtained both my Master’s (2017) and PhD (2020) degrees from ENSAE Paris, where I worked under the supervision of Alexandre Gramfort and Marco Cuturi on *optimal transport and its applications in machine learning*. My thesis manuscript is available [here](media/manuscript-hicham-janati.pdf). Following my PhD, I held a postdoctoral position at École Polytechnique, working with Rémi Flamary on *deep learning for domain adaptation*. I have been an Associate Professor at Télécom Paris since December 2021, and I joined INSEA in the same role in January 2025.
 
 
 ### News
