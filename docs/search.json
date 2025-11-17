@@ -95,7 +95,7 @@
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "INSEA\n\nStatistiques Bayésiennes (2025)\nStatistiques Multivariées (2025)\n\n\n\nÉcole Polytechnique\n\nPython for data science (Master DS for business X/HEC 2021)\nStatistical learning theory (Master data science 2022, 2023)\nOptimization algorithms for machine learning (Master data science 2023)\n\n\n\nNew York University - (Paris)\n\nIntroduction to machine learning (2022, 2023)\n\n\n\nTélécom Paris\n\nAdvanced Statistics (Cycle ingénieur 2022, 2023, 2024)\nNumerical calculus and Monte-Carlo methods (Cycle ingénieur 2022, 2023, 2024)\nAdvanced machine learning (Master spécialisé Big Data AI 2022, 2023)\nIntroduction to Machine learning (Executive education 2022, 2023, 2024)\n\n\n\nENSAE / Sorbonne Université [Teaching assistant during PhD]\n\nOptimisation différentiable (2017, 2018, 2019) - ENSAE 1A\nProbability theory (2018) - ENSAE 1A\nMonte-Carlo methods (2017, 2018, 2019) - ENSAE 2A\nProgrammation en C - La Sorbonne Université (2017)"
+    "text": "INSEA\n\nStatistiques Bayésiennes (2025)\nStatistiques Multivariées (2025)\nTechniques de réduction de dimension (2025)\n\n\n\nÉcole Polytechnique\n\nPython for data science (Master DS for business X/HEC 2021)\nStatistical learning theory (Master data science 2022, 2023)\nOptimization algorithms for machine learning (Master data science 2023)\n\n\n\nNew York University - (Paris)\n\nIntroduction to machine learning (2022, 2023)\n\n\n\nTélécom Paris\n\nAdvanced Statistics (Cycle ingénieur 2022, 2023, 2024)\nNumerical calculus and Monte-Carlo methods (Cycle ingénieur 2022, 2023, 2024)\nAdvanced machine learning (Master spécialisé Big Data AI 2022, 2023)\nIntroduction to Machine learning (Executive education 2022, 2023, 2024)\n\n\n\nENSAE / Sorbonne Université [Teaching assistant during PhD]\n\nOptimisation différentiable (2017, 2018, 2019) - ENSAE 1A\nProbability theory (2018) - ENSAE 1A\nMonte-Carlo methods (2017, 2018, 2019) - ENSAE 2A\nProgrammation en C - La Sorbonne Université (2017)"
   },
   {
     "objectID": "contact.html",
@@ -145,5 +145,12 @@
     "title": "Statistiques Multivariées",
     "section": "",
     "text": "Slides\n\nCours complet pdf\n\n\n\nProjet\n\nDeadline du rendu (voir instructions dans le notebook): Dimanche 7 Décembre 2025 23:59\nDeadline pour former les groupes: Dimanche 16 Novembre 2025 23:59: spreadsheet\nnotebook + data github\n\n\n\nTest yourself\n\nAnonymous quiz 1\nAnonymous quiz 2\nAnonymous quiz 3\n\n\n\nFeedback\nIf you took this course, please give your anonymous feedback to improve it: google form."
+  },
+  {
+    "objectID": "teaching_trd.html",
+    "href": "teaching_trd.html",
+    "title": "Techniques de réduction de dimension",
+    "section": "",
+    "text": "Slides\n\nCours 1 pdf"
   }
 ]
