@@ -1,0 +1,16 @@
+---
+title: "Techniques de réduction de dimension"
+---
+
+### Slides
+
+- Cours 1 [pdf](media/teaching/TRD/TRD-intro.pdf)
+
+
+<!-- ### Projet
+
+### Test yourself
+
+### Feedback
+
+If you took this course, please give your anonymous feedback to improve it: [google form](https://forms.gle/1K3FQDhFGW5HBCPW9).  -->

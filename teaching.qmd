@@ -6,6 +6,7 @@ title: "Teaching"
 
 - *[Statistiques Bayésiennes](./teaching_sb.qmd) (2025)*
 - *[Statistiques Multivariées](./teaching_smv.qmd) (2025)*
+- *[Techniques de réduction de dimension](./teaching_trd.qmd) (2025)*
 
 #### École Polytechnique
 
