@@ -4,8 +4,12 @@ title: "Techniques de réduction de dimension"
 
 ### Slides
 
-- Cours 1 [pdf](media/teaching/TRD/TRD-intro.pdf)
+- Cours 1 du 17/11/2025 [pdf](media/teaching/TRD/TRD-intro.pdf)
+- Cours 2 du 24/11/2025 [pdf](media/teaching/TRD/TRD-pca.pdf)
 
+### TD
+
+- TD 1 du 24/11/2025 [pdf](media/teaching/TRD/td_pca.pdf)
 
 <!-- ### Projet
 
