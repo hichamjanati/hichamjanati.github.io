@@ -11,6 +11,9 @@ title: "Techniques de réduction de dimension"
 
 - TD 1 du 24/11/2025 [pdf](media/teaching/TRD/td_pca.pdf)
 
+
+### TP
+- TP 1 -- introduction to Python [view notebook](media/teaching/TRD/introduction_python.ipynb) | [download notebook](media/teaching/TRD/introduction_python.ipynb){download="tp1_python.ipynb"}
 <!-- ### Projet
 
 ### Test yourself
