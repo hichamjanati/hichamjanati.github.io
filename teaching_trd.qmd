@@ -13,7 +13,7 @@ title: "Techniques de réduction de dimension"
 
 
 ### TP
-- TP 1 -- introduction to Python [view notebook](media/teaching/TRD/introduction_python.ipynb) | [download notebook](media/teaching/TRD/introduction_python.ipynb){download="tp1_python.ipynb"}
+- TP 1 -- introduction to Python [view notebook](media/teaching/TRD/introduction_python.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/introduction_python.ipynb){download="tp1_python.ipynb"}
 <!-- ### Projet
 
 ### Test yourself
