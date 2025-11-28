@@ -4,16 +4,29 @@ title: "Techniques de réduction de dimension"
 
 ### Slides
 
-- Cours 1 du 17/11/2025 [pdf](media/teaching/TRD/TRD-intro.pdf)
-- Cours 2 du 24/11/2025 [pdf](media/teaching/TRD/TRD-pca.pdf)
+- Introduction - Linear algebra [revisited] [pdf](media/teaching/TRD/slides_intro.pdf)
+- Principal components analysis (PCA) [pdf](media/teaching/TRD/slides_pca.pdf)
 
 ### TD
 
-- TD 1 du 24/11/2025 [pdf](media/teaching/TRD/td_pca.pdf)
+- TD 1 - intro to PCA [pdf](media/teaching/TRD/td1.pdf)
+- TD 2 - PCA and SVD [pdf](media/teaching/TRD/td2.pdf)
+
 
 
 ### TP
-- TP 1 -- introduction to Python [view notebook](media/teaching/TRD/introduction_python.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/introduction_python.ipynb){download="tp1_python.ipynb"}
+- TP 1 -- Python basics: mutability pitfalls [view notebook](media/teaching/TRD/tp1_intro.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp1_intro.ipynb){download="tp1_intro.ipynb"}
+- TP 2 -- Scientific computing with Python and NumPy [view notebook](media/teaching/TRD/tp2_numpy.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp2_numpy.ipynb){download="tp2_numpy.ipynb"}
+- TP 3 -- Linear algebra and PCA with numpy [view notebook](media/teaching/TRD/tp3_pca.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp3_pca.ipynb){download="tp3_pca.ipynb"}
+
+
+### Live feedback
+If you're taking this course right now and you'd like to send a message anonymously you can do so here: [google form](https://forms.gle/kSrnxNGwxCu8yV3p7). 
+
+
+### Course evaluation feedback form
+[Will be available after the course ends]
+
 <!-- ### Projet
 
 ### Test yourself
