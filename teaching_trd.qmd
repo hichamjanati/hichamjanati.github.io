@@ -6,6 +6,7 @@ title: "Techniques de réduction de dimension"
 
 - Introduction - Linear algebra [revisited] [pdf](media/teaching/TRD/slides_intro.pdf)
 - Principal components analysis (PCA) [pdf](media/teaching/TRD/slides_pca.pdf)
+- MDS, Isomap, t-SNE [pdf](media/teaching/TRD/slides_mds_tsne.pdf)
 
 ### TD
 
@@ -18,6 +19,7 @@ title: "Techniques de réduction de dimension"
 - TP 1 -- Python basics: mutability pitfalls [view notebook](media/teaching/TRD/tp1_intro.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp1_intro.ipynb){download="tp1_intro.ipynb"}
 - TP 2 -- Scientific computing with Python and NumPy [view notebook](media/teaching/TRD/tp2_numpy.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp2_numpy.ipynb){download="tp2_numpy.ipynb"}
 - TP 3 -- Linear algebra and PCA with numpy [view notebook](media/teaching/TRD/tp3_pca.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp3_pca.ipynb){download="tp3_pca.ipynb"}
+- TP 4 -- MDS, Isomap, t-SNE[view notebook](media/teaching/TRD/tp4_tsne.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp4_tsne.ipynb){download="tp4_tsne.ipynb"}
 
 
 ### Live feedback
