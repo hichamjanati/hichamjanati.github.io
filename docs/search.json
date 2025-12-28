@@ -151,7 +151,7 @@
     "href": "teaching_trd.html",
     "title": "Techniques de réduction de dimension",
     "section": "",
-    "text": "Slides\n\nIntroduction - Linear algebra [revisited] pdf\nPrincipal components analysis (PCA) pdf\nMDS, Isomap, t-SNE pdf\n\n\n\nTD\n\nTD 1 - intro to PCA pdf\nTD 2 - PCA and SVD pdf\n\n\n\nTP\n\nTP 1 – Python basics: mutability pitfalls view notebook | download notebook\nTP 2 – Scientific computing with Python and NumPy view notebook | download notebook\nTP 3 – Linear algebra and PCA with numpy view notebook | download notebook\nTP 4 – MDS, Isomap, t-SNEview notebook | download notebook\n\n\n\nLive feedback\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form.\n\n\nCourse evaluation feedback form\n[Will be available after the course ends]"
+    "text": "Slides\n\nIntroduction - Linear algebra [revisited] pdf\nPrincipal components analysis (PCA) pdf\nMDS, Isomap, t-SNE pdf\n\n\n\nTD\n\nTD 1 - intro to PCA pdf\nTD 2 - PCA and SVD pdf\nTD 3 - MDS, Isomap, t-SNE pdf\n\n\n\nTP\n\nTP 1 – Python basics: mutability pitfalls view notebook | download notebook\nTP 2 – Scientific computing with Python and NumPy view notebook | download notebook\nTP 3 – Linear algebra and PCA with numpy view notebook | download notebook\nTP 4 – MDS, Isomap, t-SNE view notebook | download notebook\n\n\n\nLive feedback\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form.\n\n\nCourse evaluation feedback form\n[Will be available after the course ends]"
   },
   {
     "objectID": "media/teaching/TRD/introduction_python.html#variables-names-and-identity",
