@@ -7,6 +7,7 @@ title: "Techniques de réduction de dimension"
 - Introduction - Linear algebra [revisited] [pdf](media/teaching/TRD/slides_intro.pdf)
 - Principal components analysis (PCA) [pdf](media/teaching/TRD/slides_pca.pdf)
 - MDS, Isomap, t-SNE [pdf](media/teaching/TRD/slides_mds_tsne.pdf)
+- Intro to learning representations [pdf](media/teaching/TRD/slides_representations.pdf)
 
 ### TD
 
@@ -20,14 +21,13 @@ title: "Techniques de réduction de dimension"
 - TP 2 -- Scientific computing with Python and NumPy [view notebook](media/teaching/TRD/tp2_numpy.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp2_numpy.ipynb){download="tp2_numpy.ipynb"}
 - TP 3 -- Linear algebra and PCA with numpy [view notebook](media/teaching/TRD/tp3_pca.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp3_pca.ipynb){download="tp3_pca.ipynb"}
 - TP 4 -- MDS, Isomap, t-SNE [view notebook](media/teaching/TRD/tp4_tsne.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp4_tsne.ipynb){download="tp4_tsne.ipynb"}
+- TP 5 -- Intro to learning with pytorch [view notebook](media/teaching/TRD/tp5_intro_pytorch.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/TRD/tp5_intro_pytorch.ipynb){download="tp5_intro_pytorch.ipynb"}
 
+<!-- ### Live feedback
+If you're taking this course right now and you'd like to send a message anonymously you can do so here: [google form](https://forms.gle/kSrnxNGwxCu8yV3p7).  -->
 
-### Live feedback
-If you're taking this course right now and you'd like to send a message anonymously you can do so here: [google form](https://forms.gle/kSrnxNGwxCu8yV3p7). 
-
-
-### Course evaluation feedback form
-[Will be available after the course ends]
+### Your feedback 
+Please take a minute to fill this [google form](https://docs.google.com/forms/d/e/1FAIpQLSd99ETG9iJirsvwbVPHaQe8IKpKub15Vaoo2voffgPWNlV55g/viewform?usp=dialog). 
 
 <!-- ### Projet
 
