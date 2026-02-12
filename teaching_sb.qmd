@@ -18,10 +18,11 @@ title: "Statistiques Bayésiennes"
 - TD6: _Bayesian ML: logistic regression ([pdf](media/teaching/SB/td6.pdf)) ([solutions pdf](media/teaching/SB/td6_solutions.pdf))_
 - TP7: _Bayesian ML for churn prediction ([view notebook](media/teaching/SB/tp7_churn.ipynb))_ | _([download notebook](https://hichamjanati.github.io/media/teaching/SB/tp7_churn.ipynb))_
 
-### Test yourself
 
-- General anonymous [quiz](https://forms.gle/etP9JVKy1jV72tLe7)
+### Live feedback
+If you're taking this course right now and you'd like to send a message anonymously you can do so here: [google form](https://forms.gle/kSrnxNGwxCu8yV3p7). 
 
-### Feedback
 
-If you took this course, please give your anonymous feedback to improve it: [google form](https://forms.gle/HZuVCYRAnJFRk1316). 
+<!-- ### Feedback
+
+If you took this course, please give your anonymous feedback to improve it: [google form](https://forms.gle/HZuVCYRAnJFRk1316).  -->

@@ -81,7 +81,7 @@
     "href": "teaching_sb.html",
     "title": "Statistiques Bayésiennes",
     "section": "",
-    "text": "Slides\n\nChapter 1: Bayesian thinking and bayesian models | pdf | browser\nChapter 2: Markov-Chain Monte-Carlo algorithms | pdf | browser\nChapter 3: Hierarchical models and Bayesian machine learning | pdf | browser\n\n\n\nTD/TP\n\nTD1: Bayesian models (pdf)\nTP2: MCMC diagnostics (pdf)\nTP3: Intro to PyMC (view notebook) | (download notebook)\nTP4: Hierarchical models (I): bayesian regression (view notebook) | (download notebook)\nTD5: Hierarchical models (II): Capture & recapture (pdf) (python code)\nTD6: Bayesian ML: logistic regression (pdf) (solutions pdf)\nTP7: Bayesian ML for churn prediction (view notebook) | (download notebook)\n\n\n\nTest yourself\n\nGeneral anonymous quiz\n\n\n\nFeedback\nIf you took this course, please give your anonymous feedback to improve it: google form."
+    "text": "Slides\n\nChapter 1: Bayesian thinking and bayesian models | pdf | browser\nChapter 2: Markov-Chain Monte-Carlo algorithms | pdf | browser\nChapter 3: Hierarchical models and Bayesian machine learning | pdf | browser\n\n\n\nTD/TP\n\nTD1: Bayesian models (pdf)\nTP2: MCMC diagnostics (pdf)\nTP3: Intro to PyMC (view notebook) | (download notebook)\nTP4: Hierarchical models (I): bayesian regression (view notebook) | (download notebook)\nTD5: Hierarchical models (II): Capture & recapture (pdf) (python code)\nTD6: Bayesian ML: logistic regression (pdf) (solutions pdf)\nTP7: Bayesian ML for churn prediction (view notebook) | (download notebook)\n\n\n\nLive feedback\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
   },
   {
     "objectID": "research.html",
