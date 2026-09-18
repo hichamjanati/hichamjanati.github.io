@@ -4,9 +4,11 @@ title: "Teaching"
 
 #### INSEA
 
-- *[Statistiques Bayésiennes](./teaching_sb.qmd) (2025)*
-- *[Statistiques Multivariées](./teaching_smv.qmd) (2025)*
-- *[Techniques de réduction de dimension](./teaching_trd.qmd) (2025)*
+- *[Bayesian Statistics](./teaching_sb.qmd) (2023-2025)*
+- *[Multivariate Statistics](./teaching_smv.qmd) (2025)*
+- *[Dimensionality reduction techniques](./teaching_trd.qmd) (2025)*
+- *[Advanced Time Series](./teaching_ats.qmd) (2026)*
+- *[Learning in High dimensions](./teaching_agd.qmd) (2026)*
 
 #### École Polytechnique
 
