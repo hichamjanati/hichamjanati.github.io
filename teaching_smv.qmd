@@ -3,11 +3,13 @@ title: "Multivariate Statistics and Advanced Time Series "
 ---
 
 ### Slides
-[Content will be added soon]
+
+- Hypothesis testing revisited [pdf](media/teaching/SMV/slides_testing.pdf)
 
 
 ### Labs
-[Content will be added soon]
+
+- Lab 1 - Simulations and tests [view notebook](media/teaching/SMV/lab1_testing.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/SMV/lab1_testing.ipynb){download="lab1_testing.ipynb"}
 
 
 
