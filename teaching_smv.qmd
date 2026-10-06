@@ -17,6 +17,7 @@ title: "Multivariate Statistics"
 ### Labs
 
 - Lab 1 - Simulations and tests [view notebook](media/teaching/SMV/lab1_testing.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/SMV/lab1_testing.ipynb){download="lab1_testing.ipynb"}
+- Lab 2 - Hidden populations: mixtures on single-cell data [view notebook](media/teaching/SMV/lab2_gmm.ipynb) | [download notebook](https://hichamjanati.github.io/media/teaching/SMV/lab2_gmm.ipynb){download="lab2_gmm.ipynb"}
 
 
 
