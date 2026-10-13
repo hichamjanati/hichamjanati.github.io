@@ -120,10 +120,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#textbook" id="toc-textbook" class="nav-link active" data-scroll-target="#textbook">Textbook</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">Labs</a></li>
+  <li><a href="#lectures" id="toc-lectures" class="nav-link active" data-scroll-target="#lectures">Lectures</a>
+  <ul class="collapse">
   <li><a href="#live-feedback" id="toc-live-feedback" class="nav-link" data-scroll-target="#live-feedback">Live Feedback</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -149,34 +149,109 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="textbook" class="level3">
-<h3 class="anchored" data-anchor-id="textbook">Textbook</h3>
-<ul>
-<li>Class notes, prologue and chapters 1–3 <a href="media/teaching/SMV/textbook_fsml.pdf">pdf</a></li>
-</ul>
-</section>
-<section id="slides" class="level3">
-<h3 class="anchored" data-anchor-id="slides">Slides</h3>
-<ul>
-<li>Hypothesis testing revisited <a href="media/teaching/SMV/slides_testing.pdf">pdf</a></li>
-<li>Multivariate Gaussian models <a href="media/teaching/SMV/slides_gaussian.pdf">pdf</a></li>
-<li>Gaussian mixture models <a href="media/teaching/SMV/slides_gmm.pdf">pdf</a></li>
-<li>Linear regression <a href="media/teaching/SMV/slides_linreg.pdf">pdf</a></li>
-</ul>
-</section>
-<section id="labs" class="level3">
-<h3 class="anchored" data-anchor-id="labs">Labs</h3>
-<ul>
-<li>Lab 1 - Simulations and tests <a href="./media/teaching/SMV/lab1_testing.html">view notebook</a> | <a href="https://hichamjanati.github.io/media/teaching/SMV/lab1_testing.ipynb" download="lab1_testing.ipynb">download notebook</a></li>
-<li>Lab 2 - Hidden populations: mixtures on single-cell data <a href="./media/teaching/SMV/lab2_gmm.html">view notebook</a> | <a href="https://hichamjanati.github.io/media/teaching/SMV/lab2_gmm.ipynb" download="lab2_gmm.ipynb">download notebook</a></li>
-<li>Lab 3 - Linear regression <a href="./media/teaching/SMV/lab3_ols.html">view notebook</a> | <a href="https://hichamjanati.github.io/media/teaching/SMV/lab3_ols.ipynb" download="lab3_ols.ipynb">download notebook</a></li>
-</ul>
-</section>
+<!-- BEGIN make pages: generated from media/ on every deck or notes export; edit pages.json, not this block -->
+<!-- ## Class notes
+
+- All lesson notes in one volume (prologue and chapters 1–4) [pdf](media/teaching/SMV/textbook_fsml.pdf) -->
+<section id="lectures" class="level2">
+<h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
+<style>
+.lecture-table { font-size: 0.95rem; }
+.lecture-table thead th { border-bottom: 2px solid currentColor; white-space: nowrap; }
+.lecture-table td { vertical-align: middle; }
+.lecture-table td.lt-week { text-align: center; font-weight: 700; font-size: 1.1rem; }
+.lecture-table tr.lt-part td { font-weight: 700; letter-spacing: 0.02em;
+  background: rgba(127, 127, 127, 0.12); border-top: 2px solid rgba(127, 127, 127, 0.4); }
+.lecture-table .lt-soon { opacity: 0.55; font-style: italic; }
+</style>
+
+<table class="table table-hover lecture-table caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Week</th>
+<th data-quarto-table-cell-role="th">Lecture</th>
+<th data-quarto-table-cell-role="th">Slides</th>
+<th data-quarto-table-cell-role="th">Lab</th>
+<th data-quarto-table-cell-role="th">Lesson notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="lt-part odd">
+<td colspan="5">Part 1: Statistical modeling</td>
+</tr>
+<tr class="even">
+<td rowspan="2" class="lt-week">1</td>
+<td>Data science in the age of AI</td>
+<td><span class="lt-soon">-</span></td>
+<td></td>
+<td><a href="media/teaching/SMV/notes0_prologue.pdf">Prologue</a></td>
+</tr>
+<tr class="odd">
+<td>Hypothesis testing revisited</td>
+<td><a href="media/teaching/SMV/slides_testing.pdf">pdf</a></td>
+<td>Lab 1: <a href="media/teaching/SMV/lab1_testing.html">view</a> · <a href="https://hichamjanati.github.io/media/teaching/SMV/lab1_testing.ipynb" download="lab1_testing.ipynb">download</a></td>
+<td><a href="media/teaching/SMV/notes3_testing.pdf">Chapter 3</a></td>
+</tr>
+<tr class="even">
+<td rowspan="2" class="lt-week">2</td>
+<td>Multivariate Gaussian models</td>
+<td><a href="media/teaching/SMV/slides_gaussian.pdf">pdf</a></td>
+<td></td>
+<td><a href="media/teaching/SMV/notes1_models_gaussian.pdf">Chapter 1</a></td>
+</tr>
+<tr class="odd">
+<td>Gaussian mixture models</td>
+<td><a href="media/teaching/SMV/slides_gmm.pdf">pdf</a></td>
+<td>Lab 2: <a href="media/teaching/SMV/lab2_gmm.html">view</a> · <a href="https://hichamjanati.github.io/media/teaching/SMV/lab2_gmm.ipynb" download="lab2_gmm.ipynb">download</a></td>
+<td><a href="media/teaching/SMV/notes2_gmm.pdf">Chapter 2</a></td>
+</tr>
+<tr class="even">
+<td class="lt-week">3</td>
+<td>Linear regression</td>
+<td><a href="media/teaching/SMV/slides_linreg.pdf">pdf</a></td>
+<td>Lab 3: <a href="media/teaching/SMV/lab3_ols.html">view</a> · <a href="https://hichamjanati.github.io/media/teaching/SMV/lab3_ols.ipynb" download="lab3_ols.ipynb">download</a></td>
+<td><a href="media/teaching/SMV/notes4_regression_stat.pdf">Chapter 4</a></td>
+</tr>
+<tr class="lt-part odd">
+<td colspan="5">Part 2: Predictive modeling</td>
+</tr>
+<tr class="even">
+<td class="lt-week">4</td>
+<td>Predictive linear models</td>
+<td><span class="lt-soon">soon</span></td>
+<td>Lab 4: <span class="lt-soon">soon</span></td>
+<td>Chapter 5: <span class="lt-soon">soon</span></td>
+</tr>
+<tr class="odd">
+<td class="lt-week">5</td>
+<td>Classifiers and their metrics</td>
+<td><span class="lt-soon">soon</span></td>
+<td>Lab 5: <span class="lt-soon">soon</span></td>
+<td>Chapter 5: <span class="lt-soon">soon</span></td>
+</tr>
+<tr class="even">
+<td class="lt-week">6</td>
+<td>Trees and random forests</td>
+<td><span class="lt-soon">soon</span></td>
+<td>Lab 6: <span class="lt-soon">soon</span></td>
+<td>Chapter 7: <span class="lt-soon">soon</span></td>
+</tr>
+<tr class="odd">
+<td class="lt-week">7</td>
+<td>GBDTs: Gradient-boosted decision trees</td>
+<td><span class="lt-soon">soon</span></td>
+<td>Lab 7: <span class="lt-soon">soon</span></td>
+<td>Chapter 7: <span class="lt-soon">soon</span></td>
+</tr>
+</tbody>
+</table>
+<!-- END make pages -->
 <section id="live-feedback" class="level3">
 <h3 class="anchored" data-anchor-id="live-feedback">Live Feedback</h3>
 <p>If you’re taking this course right now and you’d like to send a message anonymously you can do so here: <a href="https://forms.gle/DRdqVMjiKghsJffy7">google form</a>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

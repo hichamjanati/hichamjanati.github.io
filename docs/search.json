@@ -151,7 +151,7 @@
     "href": "teaching_smv.html",
     "title": "Multivariate Statistics",
     "section": "",
-    "text": "Textbook\n\nClass notes, prologue and chapters 1–3 pdf\n\n\n\nSlides\n\nHypothesis testing revisited pdf\nMultivariate Gaussian models pdf\nGaussian mixture models pdf\nLinear regression pdf\n\n\n\nLabs\n\nLab 1 - Simulations and tests view notebook | download notebook\nLab 2 - Hidden populations: mixtures on single-cell data view notebook | download notebook\nLab 3 - Linear regression view notebook | download notebook\n\n\n\nLive Feedback\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
+    "text": "Week\nLecture\nSlides\nLab\nLesson notes\n\n\n\n\nPart 1: Statistical modeling\n\n\n1\nData science in the age of AI\n-\n\nPrologue\n\n\nHypothesis testing revisited\npdf\nLab 1: view · download\nChapter 3\n\n\n2\nMultivariate Gaussian models\npdf\n\nChapter 1\n\n\nGaussian mixture models\npdf\nLab 2: view · download\nChapter 2\n\n\n3\nLinear regression\npdf\nLab 3: view · download\nChapter 4\n\n\nPart 2: Predictive modeling\n\n\n4\nPredictive linear models\nsoon\nLab 4: soon\nChapter 5: soon\n\n\n5\nClassifiers and their metrics\nsoon\nLab 5: soon\nChapter 5: soon\n\n\n6\nTrees and random forests\nsoon\nLab 6: soon\nChapter 7: soon\n\n\n7\nGBDTs: Gradient-boosted decision trees\nsoon\nLab 7: soon\nChapter 7: soon\n\n\n\n\n\n\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
   },
   {
     "objectID": "index.html",
@@ -509,5 +509,54 @@
     "title": "Lab 3 — Reading regression output like a statistician",
     "section": "3.5 Beyond homoscedasticity: robust standard errors",
     "text": "3.5 Beyond homoscedasticity: robust standard errors\nHere the log repaired the funnel. But what if it does not? We need to make the variance estimator robust to heteroscedasticity. There are several Heteroscedasticity-Consistent (HC) estimators. We will use HC3, a simple and popular one.\nThe idea is to stop estimating a single \\(\\sigma^2\\) and to estimate \\(\\operatorname{Var}(\\hat\\beta)\\) directly, with an estimator that converges to the true \\(\\operatorname{Var}(\\hat\\beta)\\) whatever the spread does.\n\n🤖 With AI. Find the API rather than being told it. Ask an assistant: “In Python statsmodels, how do I fit an OLS model with HC3 heteroscedasticity-robust standard errors?” Run what it gives you below, then compare the table with the one from Part 2: which columns changed, and which did not?\n\n✍️ Your answer:\n…\n\n# TODO: fit_raw_hc = ... (the raw model, HC3 robust covariance)\n# TODO: print its coefficient table and compare with Part 2\n\n\n3.6 The bootstrap\nWe end this lab with a more general method for uncertainty estimation that works with any model: the bootstrap.\nA standard error answers: if I could collect another 1 456 houses from the same market, how much would \\(\\hat\\beta\\) move? We cannot collect them. So we draw a new sample of 1 456 rows from the rows we have, with replacement, refit, and repeat. The spread of those refits estimates the spread we could not observe.\n\n🔮 Predict. Draw 1 456 rows with replacement from 1 456 rows. Roughly what fraction of the original houses ends up in the draw at least once?\n\n✍️ Your answer:\n…\n\n✍️ Your turn. Draw one resample of row positions (integers) and count how many distinct houses it contains. Hint: you can use rng.integers for generating the row positions and np.unique to count the distinct houses.\n\n\nrng = np.random.default_rng(0)\n# TODO: the array idx to be defined as n row positions, drawn with replacement\n# TODO: how many distinct houses is that?\n\nOne resample is one imaginary alternative dataset. Refit on it and you get one alternative \\(\\hat\\beta\\). Do it a thousand times and the standard deviation of those thousand estimates is the standard error, measured rather than derived.\n\n✍️ Your turn. Write the loop: at each of the B rounds, draw a fresh resample, refit the raw model on it, and keep the coefficients in row b of boot.\n\n\nrng = np.random.default_rng(0)\nB = 1000\n\nboot = np.zeros((B, X.shape[1]))                                \n# TODO: loop over the B rounds\n    # TODO: idx, a fresh resample\n    # TODO: boot[b], the coefficients refit on the resample\n\n\n✍️ Your turn. The bootstrap standard error of a coefficient is the standard deviation of its B estimates. Below you have the code to compute the SE and store it in a pandas Series, all you have to do is decide which axis ?\n\n\n# TODO: the int axis to be defined as the axis along which to compute the SE\nboot_se = pd.Series(boot.std(axis=axis, ddof=1), index=X.columns) \n\ncompare = pd.DataFrame({\"classical\": fit_raw.bse, \"HC3\": fit_raw_hc.bse,\n                        \"bootstrap\": boot_se})\nprint(compare.drop(\"const\").round(3))"
+  },
+  {
+    "objectID": "teaching_smv.html#class-notes",
+    "href": "teaching_smv.html#class-notes",
+    "title": "Multivariate Statistics",
+    "section": "",
+    "text": "All lesson notes in one volume (prologue and chapters 1–4) pdf"
+  },
+  {
+    "objectID": "teaching_smv.html#prologue",
+    "href": "teaching_smv.html#prologue",
+    "title": "Multivariate Statistics",
+    "section": "",
+    "text": "Data, models, and learning: lesson notes\n\n\n\nChapter 1 - Hypothesis testing revisited: slides | lesson notes\nChapter 2 - Statistical models and the multivariate Gaussian: slides | lesson notes\nChapter 3 - Gaussian mixtures: complexity and model selection: slides | lesson notes\nChapter 4 - Regression as statistical modeling: slides\n\n\n\n\n[Content will be added soon]\n\n\n\n\n\nLab 1 - Simulations and tests view notebook | download notebook\nLab 2 - Hidden populations: mixtures on single-cell data view notebook | download notebook\nLab 3 - Linear regression view notebook | download notebook\n\n\n\n\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
+  },
+  {
+    "objectID": "teaching_smv.html#part-1-statistical-modeling",
+    "href": "teaching_smv.html#part-1-statistical-modeling",
+    "title": "Multivariate Statistics",
+    "section": "",
+    "text": "Chapter 1 - Hypothesis testing revisited: slides | lesson notes\nChapter 2 - Statistical models and the multivariate Gaussian: slides | lesson notes\nChapter 3 - Gaussian mixtures: complexity and model selection: slides | lesson notes\nChapter 4 - Regression as statistical modeling: slides"
+  },
+  {
+    "objectID": "teaching_smv.html#part-2-predictive-modeling",
+    "href": "teaching_smv.html#part-2-predictive-modeling",
+    "title": "Multivariate Statistics",
+    "section": "Part 2: Predictive modeling",
+    "text": "Part 2: Predictive modeling\n[Content will be added soon]"
+  },
+  {
+    "objectID": "teaching_smv.html#labs",
+    "href": "teaching_smv.html#labs",
+    "title": "Multivariate Statistics",
+    "section": "Labs",
+    "text": "Labs\n\nLab 1 - Simulations and tests view notebook | download notebook\nLab 2 - Hidden populations: mixtures on single-cell data view notebook | download notebook\nLab 3 - Linear regression view notebook | download notebook"
+  },
+  {
+    "objectID": "teaching_smv.html#live-feedback",
+    "href": "teaching_smv.html#live-feedback",
+    "title": "Multivariate Statistics",
+    "section": "Live Feedback",
+    "text": "Live Feedback\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
+  },
+  {
+    "objectID": "teaching_smv.html#lectures",
+    "href": "teaching_smv.html#lectures",
+    "title": "Multivariate Statistics",
+    "section": "",
+    "text": "Week\nLecture\nSlides\nLab\nLesson notes\n\n\n\n\nPart 1: Statistical modeling\n\n\n1\nData science in the age of AI\n-\n\nPrologue\n\n\nHypothesis testing revisited\npdf\nLab 1: view · download\nChapter 3\n\n\n2\nMultivariate Gaussian models\npdf\n\nChapter 1\n\n\nGaussian mixture models\npdf\nLab 2: view · download\nChapter 2\n\n\n3\nLinear regression\npdf\nLab 3: view · download\nChapter 4\n\n\nPart 2: Predictive modeling\n\n\n4\nPredictive linear models\nsoon\nLab 4: soon\nChapter 5: soon\n\n\n5\nClassifiers and their metrics\nsoon\nLab 5: soon\nChapter 5: soon\n\n\n6\nTrees and random forests\nsoon\nLab 6: soon\nChapter 7: soon\n\n\n7\nGBDTs: Gradient-boosted decision trees\nsoon\nLab 7: soon\nChapter 7: soon\n\n\n\n\n\n\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
   }
 ]
