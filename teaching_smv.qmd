@@ -12,6 +12,7 @@ title: "Multivariate Statistics"
 - Hypothesis testing revisited [pdf](media/teaching/SMV/slides_testing.pdf)
 - Multivariate Gaussian models [pdf](media/teaching/SMV/slides_gaussian.pdf)
 - Gaussian mixture models [pdf](media/teaching/SMV/slides_gmm.pdf)
+- Linear regression [pdf](media/teaching/SMV/slides_linreg.pdf)
 
 
 ### Labs

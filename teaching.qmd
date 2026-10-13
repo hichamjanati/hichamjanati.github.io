@@ -8,7 +8,7 @@ title: "Teaching"
 - *[Multivariate Statistics](./teaching_smv.qmd) (2024-2026)*
 - *[Dimensionality reduction techniques](./teaching_trd.qmd) (2025-2026)*
 - *[Advanced Time Series](./teaching_ats.qmd) (2026)*
-- *[Learning with large data](./teaching_agd.qmd) (2024-2026)*
+- *[Learning with large data](./teaching_aml.qmd) (2024-2026)*
 
 #### École Polytechnique
 
