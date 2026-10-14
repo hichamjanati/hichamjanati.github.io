@@ -150,9 +150,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <!-- BEGIN make pages: generated from media/ on every deck or notes export; edit pages.json, not this block -->
-<!-- ## Class notes
-
-- All lesson notes in one volume (prologue and chapters 1–4) [pdf](media/teaching/SMV/textbook_fsml.pdf) -->
 <section id="lectures" class="level2">
 <h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
 <style>
@@ -163,6 +160,7 @@ ul.task-list li input[type="checkbox"] {
 .lecture-table tr.lt-part td { font-weight: 700; letter-spacing: 0.02em;
   background: rgba(127, 127, 127, 0.12); border-top: 2px solid rgba(127, 127, 127, 0.4); }
 .lecture-table .lt-soon { opacity: 0.55; font-style: italic; }
+.lecture-table tr.lt-extra td { font-style: italic; }
 </style>
 
 <table class="table table-hover lecture-table caption-top" data-quarto-postprocess="true">
@@ -206,37 +204,41 @@ ul.task-list li input[type="checkbox"] {
 <td><a href="media/teaching/SMV/notes2_gmm.pdf">Chapter 2</a></td>
 </tr>
 <tr class="even">
-<td class="lt-week">3</td>
+<td rowspan="2" class="lt-week">3</td>
 <td>Linear regression</td>
 <td><a href="media/teaching/SMV/slides_linreg.pdf">pdf</a></td>
 <td>Lab 3: <a href="media/teaching/SMV/lab3_ols.html">view</a> · <a href="https://hichamjanati.github.io/media/teaching/SMV/lab3_ols.ipynb" download="lab3_ols.ipynb">download</a></td>
 <td><a href="media/teaching/SMV/notes4_regression_stat.pdf">Chapter 4</a></td>
 </tr>
-<tr class="lt-part odd">
+<tr class="lt-extra odd">
+<td>Quiz 1: statistical modeling (solutions)</td>
+<td colspan="3"><a href="media/teaching/SMV/quiz1_solutions.pdf">pdf</a></td>
+</tr>
+<tr class="lt-part even">
 <td colspan="5">Part 2: Predictive modeling</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="lt-week">4</td>
 <td>Predictive linear models</td>
 <td><span class="lt-soon">soon</span></td>
 <td>Lab 4: <span class="lt-soon">soon</span></td>
 <td>Chapter 5: <span class="lt-soon">soon</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="lt-week">5</td>
 <td>Classifiers and their metrics</td>
 <td><span class="lt-soon">soon</span></td>
 <td>Lab 5: <span class="lt-soon">soon</span></td>
 <td>Chapter 5: <span class="lt-soon">soon</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="lt-week">6</td>
 <td>Trees and random forests</td>
 <td><span class="lt-soon">soon</span></td>
 <td>Lab 6: <span class="lt-soon">soon</span></td>
 <td>Chapter 7: <span class="lt-soon">soon</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="lt-week">7</td>
 <td>GBDTs: Gradient-boosted decision trees</td>
 <td><span class="lt-soon">soon</span></td>
