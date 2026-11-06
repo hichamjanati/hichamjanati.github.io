@@ -151,7 +151,7 @@
     "href": "teaching_smv.html",
     "title": "Multivariate Statistics",
     "section": "",
-    "text": "Week\nLecture\nSlides\nLab\nLesson notes\n\n\n\n\nPart 1: Statistical modeling\n\n\n1\nIntroduction\n-\n\nPrologue\n\n\nHypothesis testing revisited\npdf\nLab 1: view · download\nChapter 3\n\n\n2\nThe multivariate Gaussian\npdf\n\nChapter 1\n\n\nGaussian mixture models\npdf\nLab 2: view · download\nChapter 2\n\n\n3\nGaussian linear model\npdf\nLab 3: view · download\nChapter 4\n\n\nQuiz 1: statistical modeling (solutions)\npdf\n\n\nPart 2: Predictive modeling\n\n\n4\nRegularized linear models\npdf\nLab 4: view · download\nChapter 5 · Chapter 6\n\n\n5\nLogistic regression and classification metrics\npdf\nLab 5: view · download\nChapter 6\n\n\n6\nDecision trees and random forests\npdf\nLab 6: view · download\nChapter 7\n\n\n7\nGBDTs: Gradient-boosted decision trees\nsoon\nLab 7: soon\n\n\n\n\n\n\n\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
+    "text": "Week\nLecture\nSlides\nLab\nLesson notes\n\n\n\n\nPart 1: Statistical modeling\n\n\n1\nIntroduction\n-\n\nPrologue\n\n\nHypothesis testing revisited\npdf\nLab 1: view · download\nChapter 3\n\n\n2\nThe multivariate Gaussian\npdf\n\nChapter 1\n\n\nGaussian mixture models\npdf\nLab 2: view · download\nChapter 2\n\n\n3\nGaussian linear model\npdf\nLab 3: view · download\nChapter 4\n\n\nQuiz 1: statistical modeling (solutions)\npdf\n\n\nPart 2: Predictive modeling\n\n\n4\nRegularized linear models\npdf\nLab 4: view · download\nChapter 5 · Chapter 6\n\n\n5\nLogistic regression and classification metrics\npdf\nLab 5: view · download\nChapter 6\n\n\n6\nDecision trees and random forests\npdf\nLab 6: view · download\nChapter 7\n\n\n7\nGBDTs: Gradient-boosted decision trees\npdf\nLab 7: view · download\nChapter 7\n\n\n\n\n\n\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
   },
   {
     "objectID": "index.html",
@@ -557,7 +557,7 @@
     "href": "teaching_smv.html#lectures",
     "title": "Multivariate Statistics",
     "section": "",
-    "text": "Week\nLecture\nSlides\nLab\nLesson notes\n\n\n\n\nPart 1: Statistical modeling\n\n\n1\nIntroduction\n-\n\nPrologue\n\n\nHypothesis testing revisited\npdf\nLab 1: view · download\nChapter 3\n\n\n2\nThe multivariate Gaussian\npdf\n\nChapter 1\n\n\nGaussian mixture models\npdf\nLab 2: view · download\nChapter 2\n\n\n3\nGaussian linear model\npdf\nLab 3: view · download\nChapter 4\n\n\nQuiz 1: statistical modeling (solutions)\npdf\n\n\nPart 2: Predictive modeling\n\n\n4\nRegularized linear models\npdf\nLab 4: view · download\nChapter 5 · Chapter 6\n\n\n5\nLogistic regression and classification metrics\npdf\nLab 5: view · download\nChapter 6\n\n\n6\nDecision trees and random forests\npdf\nLab 6: view · download\nChapter 7\n\n\n7\nGBDTs: Gradient-boosted decision trees\nsoon\nLab 7: soon\n\n\n\n\n\n\n\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
+    "text": "Week\nLecture\nSlides\nLab\nLesson notes\n\n\n\n\nPart 1: Statistical modeling\n\n\n1\nIntroduction\n-\n\nPrologue\n\n\nHypothesis testing revisited\npdf\nLab 1: view · download\nChapter 3\n\n\n2\nThe multivariate Gaussian\npdf\n\nChapter 1\n\n\nGaussian mixture models\npdf\nLab 2: view · download\nChapter 2\n\n\n3\nGaussian linear model\npdf\nLab 3: view · download\nChapter 4\n\n\nQuiz 1: statistical modeling (solutions)\npdf\n\n\nPart 2: Predictive modeling\n\n\n4\nRegularized linear models\npdf\nLab 4: view · download\nChapter 5 · Chapter 6\n\n\n5\nLogistic regression and classification metrics\npdf\nLab 5: view · download\nChapter 6\n\n\n6\nDecision trees and random forests\npdf\nLab 6: view · download\nChapter 7\n\n\n7\nGBDTs: Gradient-boosted decision trees\npdf\nLab 7: view · download\nChapter 7\n\n\n\n\n\n\nIf you’re taking this course right now and you’d like to send a message anonymously you can do so here: google form."
   },
   {
     "objectID": "media/teaching/SMV/lab4_regml.html",
@@ -726,5 +726,33 @@
     "title": "Lab 6 — Trees and random forests: who will be in financial distress?",
     "section": "3.3 Which columns does the forest use?",
     "text": "3.3 Which columns does the forest use?\nforest.feature_importances_ gives one number per column: the decrease of impurity brought by all the splits on that column, weighted by the share of the training borrowers that reach them, averaged over the trees. The numbers add up to 1.\n\n🔮 Predict. Which two columns will the forest rely on most? Why?\n\n✍️ Your answer:\n…\n\n✍️ Your turn. Build importances, a Series of the importances of forest indexed by the column names.\n\n\n# TODO: importances\nimportances.sort_values().plot.barh(color=GREEN)\nplt.xlabel(\"importance (impurity decrease)\")\nplt.show()\nimportances.sort_values(ascending=False).round(3)"
+  },
+  {
+    "objectID": "media/teaching/SMV/lab7_boosting.html",
+    "href": "media/teaching/SMV/lab7_boosting.html",
+    "title": "Lab 7 — Boosting: rounds, learning rate, three libraries",
+    "section": "",
+    "text": "The lecture built gradient boosting: small trees added one after the other, each one fitted to the pseudo-residuals of the sum so far and scaled by a learning rate. This lab uses it on the file of the last two labs, the 40 000 borrowers, raw. The random forest of the previous lab scored 0.888 on the test borrowers. You meet HistGradientBoostingClassifier and its two main dials, the number of rounds and the learning rate, then the same model in XGBoost and LightGBM.\nBoxes as always: 🔮 predict before running (no AI) · 🧠 explain in your own words · ✍️ short task, boilerplate given.\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import HistGradientBoostingClassifier\nfrom sklearn.metrics import roc_auc_score, log_loss\n\nBLUE, RED, GREEN, ORANGE, GRAY = \"#1f6fb2\", \"#c92a1a\", \"#1c7a43\", \"#e8871a\", \"#8a8a8a\"\nplt.rcParams[\"figure.figsize\"] = (6.5, 3.6)\nplt.rcParams[\"axes.spines.top\"] = plt.rcParams[\"axes.spines.right\"] = False"
+  },
+  {
+    "objectID": "media/teaching/SMV/lab7_boosting.html#how-many-rounds",
+    "href": "media/teaching/SMV/lab7_boosting.html#how-many-rounds",
+    "title": "Lab 7 — Boosting: rounds, learning rate, three libraries",
+    "section": "3.1 How many rounds?",
+    "text": "3.1 How many rounds?\nstaged_predict_proba replays a fitted model round by round: it gives the predicted probabilities after 1 round, after 2 rounds, and so on. log_loss computes the loss that boosting minimizes, the lecture’s log-loss averaged over the borrowers.\n\ndef loss_curve(model, X, y):\n    \"\"\"Log-loss of a fitted boosting model on the borrowers (X, y), after each round.\"\"\"\n    return np.array([log_loss(y, p[:, 1]) for p in model.staged_predict_proba(X)])\n\n\n🔮 Predict. Adding trees never hurt the forest of the previous lab. Will adding rounds hurt boosting? Why?\n\n✍️ Your answer:\n…\n\n✍️ Your turn. Fit hgb_300 on the fit rows: learning rate 0.1, 300 rounds, early_stopping=False and random_state=0.\n\n\n# TODO: hgb_300\n\ntrain_loss = loss_curve(hgb_300, X_fit, y_fit)\nval_loss = loss_curve(hgb_300, X_val, y_val)\nbest_round = int(np.argmin(val_loss)) + 1\nrounds = np.arange(1, 301)\n\nplt.plot(rounds, train_loss, color=BLUE, label=\"fit rows\")\nplt.plot(rounds, val_loss, color=RED, label=\"validation rows\")\nplt.axvline(best_round, color=GRAY, ls=\":\", label=f\"minimum at round {best_round}\")\nplt.xlabel(\"rounds\"); plt.ylabel(\"log-loss\"); plt.legend()\nplt.show()\nprint(f\"validation log-loss: round {best_round} {val_loss.min():.3f}, round 300 {val_loss[-1]:.3f}\")\nprint(f\"log-loss on the fit rows at round 300: {train_loss[-1]:.3f}\")"
+  },
+  {
+    "objectID": "media/teaching/SMV/lab7_boosting.html#the-learning-rate",
+    "href": "media/teaching/SMV/lab7_boosting.html#the-learning-rate",
+    "title": "Lab 7 — Boosting: rounds, learning rate, three libraries",
+    "section": "3.2 The learning rate",
+    "text": "3.2 The learning rate\n\n🔮 Predict. With a learning rate of 0.3, then of 0.02, will the validation minimum come before or after round 32? Why?\n\n✍️ Your answer:\n…\n\ncurves = {0.1: val_loss}\nfor lr in [0.3, 0.02]:\n    model = HistGradientBoostingClassifier(learning_rate=lr, max_iter=300, early_stopping=False,\n                                           random_state=0).fit(X_fit, y_fit)\n    curves[lr] = loss_curve(model, X_val, y_val)\n\nfor (lr, v), col in zip(sorted(curves.items()), [GREEN, BLUE, RED]):\n    plt.plot(rounds, v, color=col, label=f\"learning rate {lr}\")\n    print(f\"learning rate {lr}: minimum {v.min():.3f} at round {np.argmin(v) + 1}, round 300 {v[-1]:.3f}\")\nplt.ylim(0.155, 0.25)\nplt.xlabel(\"rounds\"); plt.ylabel(\"validation log-loss\"); plt.legend()\nplt.show()\n\n\n🧠 Explain. What does a small learning rate buy, and what does it cost?\n\n✍️ Your answer:\n…"
+  },
+  {
+    "objectID": "media/teaching/SMV/lab7_boosting.html#early-stopping",
+    "href": "media/teaching/SMV/lab7_boosting.html#early-stopping",
+    "title": "Lab 7 — Boosting: rounds, learning rate, three libraries",
+    "section": "3.3 Early stopping",
+    "text": "3.3 Early stopping\nIn Part 2, hgb fitted fewer rounds than its max_iter=100. Above 10 000 training rows, HistGradientBoostingClassifier uses early stopping by default: it sets aside 10 % of the training rows (validation_fraction=0.1), computes their loss after every round, and stops when that loss has not improved for 10 rounds (n_iter_no_change=10). n_iter_ is the number of rounds it fitted.\n\n✍️ Your turn. Fit hgb_es on all the training rows: learning rate 0.02, up to 2 000 rounds, early_stopping=True and random_state=0.\n\n\n# TODO: hgb_es\nauc_train, auc_test = train_test_auc(hgb_es)\nprint(f\"rounds fitted {hgb_es.n_iter_}: train ROC-AUC {auc_train:.3f}   test ROC-AUC {auc_test:.3f}\")\n\n\n🧠 Explain. On which rows was the stopping round chosen? Is the test ROC-AUC of hgb_es a fair score?\n\n✍️ Your answer:\n…"
   }
 ]
